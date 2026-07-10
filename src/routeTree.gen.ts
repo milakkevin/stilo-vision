@@ -9,38 +9,168 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServiciiRouteImport } from './routes/servicii'
+import { Route as RecenziiRouteImport } from './routes/recenzii'
+import { Route as ProcesRouteImport } from './routes/proces'
+import { Route as DespreNoiRouteImport } from './routes/despre-noi'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PortofoliuIndexRouteImport } from './routes/portofoliu.index'
+import { Route as PortofoliuSlugRouteImport } from './routes/portofoliu.$slug'
 
+const ServiciiRoute = ServiciiRouteImport.update({
+  id: '/servicii',
+  path: '/servicii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecenziiRoute = RecenziiRouteImport.update({
+  id: '/recenzii',
+  path: '/recenzii',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcesRoute = ProcesRouteImport.update({
+  id: '/proces',
+  path: '/proces',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DespreNoiRoute = DespreNoiRouteImport.update({
+  id: '/despre-noi',
+  path: '/despre-noi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortofoliuIndexRoute = PortofoliuIndexRouteImport.update({
+  id: '/portofoliu/',
+  path: '/portofoliu/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortofoliuSlugRoute = PortofoliuSlugRouteImport.update({
+  id: '/portofoliu/$slug',
+  path: '/portofoliu/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/despre-noi': typeof DespreNoiRoute
+  '/proces': typeof ProcesRoute
+  '/recenzii': typeof RecenziiRoute
+  '/servicii': typeof ServiciiRoute
+  '/portofoliu/$slug': typeof PortofoliuSlugRoute
+  '/portofoliu/': typeof PortofoliuIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/despre-noi': typeof DespreNoiRoute
+  '/proces': typeof ProcesRoute
+  '/recenzii': typeof RecenziiRoute
+  '/servicii': typeof ServiciiRoute
+  '/portofoliu/$slug': typeof PortofoliuSlugRoute
+  '/portofoliu': typeof PortofoliuIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/despre-noi': typeof DespreNoiRoute
+  '/proces': typeof ProcesRoute
+  '/recenzii': typeof RecenziiRoute
+  '/servicii': typeof ServiciiRoute
+  '/portofoliu/$slug': typeof PortofoliuSlugRoute
+  '/portofoliu/': typeof PortofoliuIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/despre-noi'
+    | '/proces'
+    | '/recenzii'
+    | '/servicii'
+    | '/portofoliu/$slug'
+    | '/portofoliu/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/despre-noi'
+    | '/proces'
+    | '/recenzii'
+    | '/servicii'
+    | '/portofoliu/$slug'
+    | '/portofoliu'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/despre-noi'
+    | '/proces'
+    | '/recenzii'
+    | '/servicii'
+    | '/portofoliu/$slug'
+    | '/portofoliu/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  DespreNoiRoute: typeof DespreNoiRoute
+  ProcesRoute: typeof ProcesRoute
+  RecenziiRoute: typeof RecenziiRoute
+  ServiciiRoute: typeof ServiciiRoute
+  PortofoliuSlugRoute: typeof PortofoliuSlugRoute
+  PortofoliuIndexRoute: typeof PortofoliuIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/servicii': {
+      id: '/servicii'
+      path: '/servicii'
+      fullPath: '/servicii'
+      preLoaderRoute: typeof ServiciiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recenzii': {
+      id: '/recenzii'
+      path: '/recenzii'
+      fullPath: '/recenzii'
+      preLoaderRoute: typeof RecenziiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/proces': {
+      id: '/proces'
+      path: '/proces'
+      fullPath: '/proces'
+      preLoaderRoute: typeof ProcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/despre-noi': {
+      id: '/despre-noi'
+      path: '/despre-noi'
+      fullPath: '/despre-noi'
+      preLoaderRoute: typeof DespreNoiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +178,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portofoliu/': {
+      id: '/portofoliu/'
+      path: '/portofoliu'
+      fullPath: '/portofoliu/'
+      preLoaderRoute: typeof PortofoliuIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portofoliu/$slug': {
+      id: '/portofoliu/$slug'
+      path: '/portofoliu/$slug'
+      fullPath: '/portofoliu/$slug'
+      preLoaderRoute: typeof PortofoliuSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  DespreNoiRoute: DespreNoiRoute,
+  ProcesRoute: ProcesRoute,
+  RecenziiRoute: RecenziiRoute,
+  ServiciiRoute: ServiciiRoute,
+  PortofoliuSlugRoute: PortofoliuSlugRoute,
+  PortofoliuIndexRoute: PortofoliuIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

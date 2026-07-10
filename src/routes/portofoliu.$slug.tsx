@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import type { Project } from "@/lib/projects";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { ConsultCTA } from "@/components/ConsultCTA";
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/portofoliu/$slug")({
 });
 
 function Page() {
-  const p = Route.useLoaderData();
+  const p = Route.useLoaderData() as Project;
   const others = PROJECTS.filter((x) => x.slug !== p.slug).slice(0, 3);
 
   return (
