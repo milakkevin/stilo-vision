@@ -1,0 +1,251 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { PageHero } from "./despre-noi";
+import { Reveal } from "@/components/Reveal";
+import { SITE, whatsappUrl } from "@/lib/site";
+import hero from "@/assets/project-6.jpg";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact — Consultație gratuită | Stilo Renovation Satu Mare" },
+      {
+        name: "description",
+        content:
+          "Solicitați o consultație gratuită. Telefon, WhatsApp și formular de contact pentru renovări în Satu Mare.",
+      },
+      { property: "og:title", content: "Contact — Stilo Renovation" },
+      { property: "og:url", content: "/contact" },
+    ],
+    links: [{ rel: "canonical", href: "/contact" }],
+  }),
+  component: Page,
+});
+
+function Page() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact"
+        title="Solicitați o consultație gratuită."
+        image={hero}
+      />
+
+      <section className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:px-10">
+        <Reveal className="md:col-span-5">
+          <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Informații</div>
+          <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+            Suntem aici pentru dumneavoastră.
+          </h2>
+          <p className="mt-6 text-base text-muted-foreground">
+            Completați formularul sau ne puteți contacta direct. Vă răspundem în cel mai scurt timp și pornim discuția despre proiect.
+          </p>
+
+          <div className="mt-10 space-y-6">
+            <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="flex items-start gap-4 group">
+              <Phone className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Telefon</div>
+                <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">{SITE.phone}</div>
+              </div>
+            </a>
+            <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+              <MessageCircle className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</div>
+                <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">Scrieți-ne pe WhatsApp</div>
+              </div>
+            </a>
+            <div className="flex items-start gap-4">
+              <MapPin className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Zonă</div>
+                <div className="font-display text-2xl text-foreground">Satu Mare și împrejurimi</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <Clock className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Program</div>
+                <div className="font-display text-2xl text-foreground">{SITE.hours}</div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={120} className="md:col-span-7 md:col-start-6">
+          <ContactForm />
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
+        <div className="overflow-hidden rounded-3xl border border-border">
+          <div className="flex items-center justify-between bg-beige/50 px-6 py-4">
+            <div className="font-display text-lg text-foreground">
+              Ne găsiți în Satu Mare
+            </div>
+            <a
+              href={SITE.mapsLink}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-foreground px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-background"
+            >
+              Deschide în Google Maps
+            </a>
+          </div>
+          <div className="aspect-[16/8]">
+            <iframe
+              title="Locație Stilo Renovation"
+              src={SITE.mapsEmbed}
+              className="h-full w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function ContactForm() {
+  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({
+    nume: "",
+    telefon: "",
+    email: "",
+    tip: "Renovare apartament",
+    mesaj: "",
+  });
+
+  const on = (k: keyof typeof form) => (e: any) =>
+    setForm({ ...form, [k]: e.target.value });
+
+  const submit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Basic validation
+    if (!form.nume.trim() || !form.telefon.trim()) return;
+    // Fallback: open WhatsApp with prefilled message
+    const text = `Bună! Sunt ${form.nume}. Tip proiect: ${form.tip}. Telefon: ${form.telefon}. Email: ${form.email}. ${form.mesaj}`;
+    window.open(
+      `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(text)}`,
+      "_blank",
+    );
+    setSent(true);
+  };
+
+  return (
+    <form
+      onSubmit={submit}
+      className="rounded-3xl border border-border bg-background p-8 md:p-10"
+    >
+      <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
+        Formular
+      </div>
+      <h3 className="mt-3 font-display text-3xl text-foreground">
+        Solicitați o consultație gratuită
+      </h3>
+      <p className="mt-3 text-sm text-muted-foreground">
+        Completați formularul și vă vom contacta în cel mai scurt timp.
+      </p>
+
+      <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <Field label="Nume" required>
+          <input
+            required
+            maxLength={80}
+            value={form.nume}
+            onChange={on("nume")}
+            className={inputCls}
+            placeholder="Numele dumneavoastră"
+          />
+        </Field>
+        <Field label="Telefon" required>
+          <input
+            required
+            maxLength={20}
+            value={form.telefon}
+            onChange={on("telefon")}
+            className={inputCls}
+            placeholder="07xx xxx xxx"
+            inputMode="tel"
+          />
+        </Field>
+        <Field label="Email">
+          <input
+            type="email"
+            maxLength={120}
+            value={form.email}
+            onChange={on("email")}
+            className={inputCls}
+            placeholder="nume@exemplu.ro"
+          />
+        </Field>
+        <Field label="Tip proiect">
+          <select value={form.tip} onChange={on("tip")} className={inputCls}>
+            {[
+              "Renovare apartament",
+              "Renovare casă",
+              "Amenajare interioară",
+              "Spațiu comercial",
+              "Design interior",
+              "Consultanță",
+            ].map((o) => (
+              <option key={o}>{o}</option>
+            ))}
+          </select>
+        </Field>
+        <Field label="Mesaj" className="md:col-span-2">
+          <textarea
+            rows={5}
+            maxLength={1000}
+            value={form.mesaj}
+            onChange={on("mesaj")}
+            className={`${inputCls} resize-none`}
+            placeholder="Câteva detalii despre proiect..."
+          />
+        </Field>
+      </div>
+
+      <button
+        type="submit"
+        className="mt-8 w-full rounded-full bg-foreground px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-background transition hover:bg-foreground/90 md:w-auto"
+      >
+        Programează o consultație gratuită
+      </button>
+      <p className="mt-4 text-xs text-muted-foreground">
+        Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.
+      </p>
+      {sent && (
+        <p className="mt-4 rounded-lg bg-gold/20 px-4 py-3 text-sm text-foreground">
+          Mulțumim! Am deschis WhatsApp cu detaliile — apăsați trimite pentru a finaliza.
+        </p>
+      )}
+    </form>
+  );
+}
+
+const inputCls =
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-foreground focus:outline-none";
+
+function Field({
+  label,
+  children,
+  required,
+  className = "",
+}: {
+  label: string;
+  children: React.ReactNode;
+  required?: boolean;
+  className?: string;
+}) {
+  return (
+    <label className={`block ${className}`}>
+      <span className="mb-2 block text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
+        {label} {required && <span className="text-gold">*</span>}
+      </span>
+      {children}
+    </label>
+  );
+}
