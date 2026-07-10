@@ -1,0 +1,117 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Reveal } from "@/components/Reveal";
+import { PageHero } from "./despre-noi";
+import { ConsultCTA } from "@/components/ConsultCTA";
+import { SERVICES } from "@/lib/services";
+import hero from "@/assets/project-1.jpg";
+
+export const Route = createFileRoute("/servicii")({
+  head: () => ({
+    meta: [
+      { title: "Servicii — Renovări și finisaje premium | Stilo Renovation" },
+      {
+        name: "description",
+        content:
+          "Renovări complete, amenajări interioare, finisaje premium, rigips, plafoane decorative, iluminat, gresie și faianță, parchet, instalații — toate coordonate de o singură echipă.",
+      },
+      { property: "og:title", content: "Servicii — Stilo Renovation" },
+      { property: "og:url", content: "/servicii" },
+    ],
+    links: [{ rel: "canonical", href: "/servicii" }],
+  }),
+  component: Page,
+});
+
+function Page() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Servicii"
+        title="Renovări la cheie, executate cu răbdare și cu atenție la fiecare detaliu."
+        image={hero}
+      />
+
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <Reveal>
+          <div className="max-w-2xl">
+            <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Ce facem</div>
+            <h2 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl">
+              Toate meseriile pe același șantier.
+            </h2>
+            <p className="mt-6 text-base text-muted-foreground">
+              Prin coordonarea integrală a lucrării, evităm decalajele între
+              echipe și greșelile costisitoare care apar când sunt implicați
+              mai mulți furnizori.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((s) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.slug} className="group flex flex-col gap-5 bg-background p-8 transition hover:bg-beige/40">
+                <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
+                <div className="font-display text-2xl text-foreground">{s.title}</div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {s.short}
+                </p>
+                <ul className="mt-2 space-y-2">
+                  {s.benefits.map((b) => (
+                    <li key={b} className="text-xs text-muted-foreground">
+                      · {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-y border-border/60 bg-beige/40">
+        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
+          <div className="grid gap-14 md:grid-cols-2">
+            <Reveal>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Beneficii</div>
+              <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+                De ce să alegeți o echipă completă.
+              </h2>
+              <ul className="mt-8 space-y-4 text-base text-muted-foreground">
+                <li>· Un singur contract, un singur punct de contact.</li>
+                <li>· Etape corelate — fără timp mort între meserii.</li>
+                <li>· Comunicare directă cu coordonatorul de proiect.</li>
+                <li>· Materiale verificate, alese împreună cu dumneavoastră.</li>
+                <li>· Garanție pentru manopera executată.</li>
+              </ul>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Cum decurge</div>
+              <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+                Procesul, pe scurt.
+              </h2>
+              <ol className="mt-8 space-y-4 text-base text-muted-foreground">
+                <li><span className="mr-3 font-display text-gold">01.</span> Consultație gratuită.</li>
+                <li><span className="mr-3 font-display text-gold">02.</span> Vizită la locație.</li>
+                <li><span className="mr-3 font-display text-gold">03.</span> Ofertă personalizată.</li>
+                <li><span className="mr-3 font-display text-gold">04.</span> Execuție.</li>
+                <li><span className="mr-3 font-display text-gold">05.</span> Predare la cheie.</li>
+              </ol>
+              <Link
+                to="/proces"
+                className="mt-8 inline-flex text-[11px] uppercase tracking-[0.28em] text-foreground underline-offset-8 hover:underline"
+              >
+                Vezi procesul detaliat →
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <ConsultCTA
+        title="Aveți nevoie de o estimare?"
+        subtitle="Ne spuneți despre proiect, revenim cu o propunere clară, fără costuri ascunse."
+      />
+    </>
+  );
+}
