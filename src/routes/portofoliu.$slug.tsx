@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import type { Project } from "@/lib/projects";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { ConsultCTA } from "@/components/ConsultCTA";
