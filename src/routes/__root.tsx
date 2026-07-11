@@ -102,6 +102,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap",
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Stilo Renovation SRL",
+          image: "/favicon.ico",
+          telephone: "+40742914164",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Satu Mare",
+            addressCountry: "RO",
+          },
+          areaServed: "Satu Mare",
+          description:
+            "Renovări interioare premium, amenajări case, apartamente și spații comerciale în Satu Mare.",
+          openingHours: "Mo-Fr 08:00-17:00",
+          sameAs: ["https://www.facebook.com/StiloRenovation/"],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

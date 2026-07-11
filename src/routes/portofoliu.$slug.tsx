@@ -6,7 +6,7 @@ import { ConsultCTA } from "@/components/ConsultCTA";
 import { projectBySlug, PROJECTS } from "@/lib/projects";
 
 export const Route = createFileRoute("/portofoliu/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): Project => {
     const project = projectBySlug(params.slug);
     if (!project) throw notFound();
     return project;
