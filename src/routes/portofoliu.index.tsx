@@ -9,13 +9,14 @@ import hero from "@/assets/project-4.jpg";
 export const Route = createFileRoute("/portofoliu/")({
   head: () => ({
     meta: [
-      { title: "Portofoliu — Proiecte de renovare | Stilo Renovation" },
+      { title: "Portofoliu — Proiecte de renovare | Stilo" },
       {
         name: "description",
         content:
           "Selecție de proiecte executate de Stilo Renovation în Satu Mare: renovări case, apartamente, restaurante și spații comerciale, cu finisaje premium.",
       },
       { property: "og:title", content: "Portofoliu — Stilo Renovation" },
+      { property: "og:description", content: "Renovări case, apartamente, restaurante și spații comerciale în Satu Mare — proiecte executate la cheie cu finisaje premium." },
       { property: "og:url", content: "/portofoliu" },
     ],
     links: [{ rel: "canonical", href: "/portofoliu" }],

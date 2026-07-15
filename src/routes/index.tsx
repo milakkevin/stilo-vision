@@ -12,14 +12,14 @@ import { SITE } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Stilo Renovation | Renovări Interioare Premium în Satu Mare" },
+      { title: "Renovări interioare premium în Satu Mare — Stilo" },
       {
         name: "description",
         content:
-          "Stilo Renovation — renovări interioare complete, amenajări moderne și finisaje premium în Satu Mare. Consultație gratuită pentru case, apartamente și spații comerciale.",
+          "Renovări la cheie pentru case, apartamente și spații comerciale în Satu Mare. Finisaje premium, echipă coordonată, consultație gratuită.",
       },
-      { property: "og:title", content: "Stilo Renovation | Renovări Premium în Satu Mare" },
-      { property: "og:description", content: "Renovări la cheie, finisaje premium, execuție impecabilă." },
+      { property: "og:title", content: "Renovări interioare premium în Satu Mare — Stilo" },
+      { property: "og:description", content: "Renovări la cheie, finisaje premium și execuție impecabilă în Satu Mare. Solicitați o consultație gratuită." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

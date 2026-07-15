@@ -6,13 +6,14 @@ import { ConsultCTA } from "@/components/ConsultCTA";
 export const Route = createFileRoute("/despre-noi")({
   head: () => ({
     meta: [
-      { title: "Despre noi — Stilo Renovation | Renovări premium Satu Mare" },
+      { title: "Despre noi — Stilo Renovation Satu Mare" },
       {
         name: "description",
         content:
           "Echipa Stilo Renovation execută renovări interioare complete în Satu Mare, cu accent pe seriozitate, calitate și finisaje premium.",
       },
       { property: "og:title", content: "Despre noi — Stilo Renovation" },
+      { property: "og:description", content: "Echipă din Satu Mare specializată în renovări interioare complete și amenajări la cheie, cu accent pe seriozitate și calitate." },
       { property: "og:url", content: "/despre-noi" },
     ],
     links: [{ rel: "canonical", href: "/despre-noi" }],

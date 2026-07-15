@@ -8,13 +8,14 @@ import hero from "@/assets/project-2.jpg";
 export const Route = createFileRoute("/proces")({
   head: () => ({
     meta: [
-      { title: "Procesul nostru — De la consultație la predare | Stilo Renovation" },
+      { title: "Procesul nostru — Stilo Renovation" },
       {
         name: "description",
         content:
           "5 etape clare: consultație gratuită, vizită la locație, ofertă personalizată, execuție și predare la cheie.",
       },
       { property: "og:title", content: "Procesul nostru — Stilo Renovation" },
+      { property: "og:description", content: "Cum lucrăm: consultație, vizită la locație, ofertă, execuție și predare la cheie — 5 etape clare, fără surprize." },
       { property: "og:url", content: "/proces" },
     ],
     links: [{ rel: "canonical", href: "/proces" }],

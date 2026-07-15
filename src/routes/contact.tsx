@@ -9,13 +9,14 @@ import hero from "@/assets/project-6.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Consultație gratuită | Stilo Renovation Satu Mare" },
+      { title: "Contact — Consultație gratuită | Stilo Renovation" },
       {
         name: "description",
         content:
           "Solicitați o consultație gratuită. Telefon, WhatsApp și formular de contact pentru renovări în Satu Mare.",
       },
       { property: "og:title", content: "Contact — Stilo Renovation" },
+      { property: "og:description", content: "Contactați echipa Stilo Renovation din Satu Mare pentru o consultație gratuită — telefon, WhatsApp sau formular." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],

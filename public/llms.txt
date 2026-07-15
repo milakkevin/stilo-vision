@@ -1,0 +1,13 @@
+# Stilo Renovation
+
+> Firmă din Satu Mare specializată în renovări interioare complete și amenajări la cheie pentru case, apartamente și spații comerciale, cu finisaje premium.
+
+## Pages
+
+- [Acasă](/): Prezentare generală — renovări interioare premium în Satu Mare.
+- [Despre noi](/despre-noi): Echipa Stilo Renovation și modul nostru de lucru.
+- [Servicii](/servicii): Renovări complete, finisaje, rigips, iluminat, instalații, design interior.
+- [Portofoliu](/portofoliu): Proiecte executate — case, apartamente, restaurante, spații comerciale.
+- [Proces](/proces): Cele 5 etape, de la consultație gratuită la predarea la cheie.
+- [Recenzii](/recenzii): Ce spun clienții despre seriozitate, calitate și termene.
+- [Contact](/contact): Telefon, WhatsApp, formular și locație în Satu Mare.
