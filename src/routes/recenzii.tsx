@@ -9,13 +9,14 @@ import hero from "@/assets/project-5.jpg";
 export const Route = createFileRoute("/recenzii")({
   head: () => ({
     meta: [
-      { title: "Recenzii clienți — Stilo Renovation | 5.0 pe Google" },
+      { title: "Recenzii clienți — Stilo Renovation" },
       {
         name: "description",
         content:
           "Ce spun clienții Stilo Renovation despre seriozitate, calitate și termene de execuție. Rating Google 5.0.",
       },
       { property: "og:title", content: "Recenzii — Stilo Renovation" },
+      { property: "og:description", content: "Rating Google 5.0. Clienți din Satu Mare ne recomandă pentru seriozitate, calitate și termene de execuție respectate." },
       { property: "og:url", content: "/recenzii" },
     ],
     links: [{ rel: "canonical", href: "/recenzii" }],

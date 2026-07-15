@@ -26,6 +26,23 @@ export const Route = createFileRoute("/portofoliu/$slug")({
         { property: "og:url", content: `/portofoliu/${loaderData.slug}` },
       ],
       links: [{ rel: "canonical", href: `/portofoliu/${loaderData.slug}` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: loaderData.title,
+            description: loaderData.description,
+            image: loaderData.cover,
+            articleSection: loaderData.category,
+            about: loaderData.category,
+            locationCreated: loaderData.location,
+            author: { "@type": "Organization", name: "Stilo Renovation SRL" },
+            publisher: { "@type": "Organization", name: "Stilo Renovation SRL" },
+          }),
+        },
+      ],
     };
   },
   component: Page,

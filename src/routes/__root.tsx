@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Stilo Renovation | Renovări Interioare Premium în Satu Mare" },
+      { title: "Stilo Renovation — Renovări Premium Satu Mare" },
       {
         name: "description",
         content:
-          "Stilo Renovation oferă renovări interioare complete în Satu Mare. Finisaje premium, amenajări moderne, renovări case, apartamente și spații comerciale. Solicitați o consultație gratuită.",
+          "Renovări interioare la cheie în Satu Mare: case, apartamente și spații comerciale, cu finisaje premium și consultație gratuită.",
       },
       { name: "author", content: "Stilo Renovation SRL" },
       { property: "og:site_name", content: "Stilo Renovation" },

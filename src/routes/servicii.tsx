@@ -8,16 +8,41 @@ import hero from "@/assets/project-1.jpg";
 export const Route = createFileRoute("/servicii")({
   head: () => ({
     meta: [
-      { title: "Servicii — Renovări și finisaje premium | Stilo Renovation" },
+      { title: "Servicii — Renovări și finisaje premium | Stilo" },
       {
         name: "description",
         content:
-          "Renovări complete, amenajări interioare, finisaje premium, rigips, plafoane decorative, iluminat, gresie și faianță, parchet, instalații — toate coordonate de o singură echipă.",
+          "Renovări la cheie coordonate de o singură echipă: finisaje premium, rigips, iluminat, gresie, parchet și instalații în Satu Mare.",
       },
       { property: "og:title", content: "Servicii — Stilo Renovation" },
+      { property: "og:description", content: "Toate meseriile pe același șantier: renovări complete, finisaje premium, iluminat, instalații și design interior în Satu Mare." },
       { property: "og:url", content: "/servicii" },
     ],
     links: [{ rel: "canonical", href: "/servicii" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Servicii Stilo Renovation",
+          itemListElement: SERVICES.map((s, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "Service",
+              name: s.title,
+              description: s.short,
+              areaServed: "Satu Mare",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "Stilo Renovation SRL",
+              },
+            },
+          })),
+        }),
+      },
+    ],
   }),
   component: Page,
 });
