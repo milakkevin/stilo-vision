@@ -48,7 +48,7 @@ function Home() {
               Renovări premium · Satu Mare
             </div>
             <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-7xl lg:text-[88px]">
-              Renovări la cheie. Executate ca la carte.
+              Renovări la cheie.<br />Privește-ți noua casă.
             </h1>
             <p className="mt-6 max-w-xl text-sm leading-relaxed text-background/80 sm:text-base md:text-lg">
               Case, apartamente și spații comerciale — coordonate integral,
