@@ -1,4 +1,4 @@
-import logoAsset from "@/assets/stilo-logo-v2.png.asset.json";
+import logoAsset from "@/assets/stilo-logo-transparent.png.asset.json";
 
 export function Logo({
   className = "",
