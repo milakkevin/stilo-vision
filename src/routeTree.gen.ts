@@ -14,6 +14,7 @@ import { Route as RecenziiRouteImport } from './routes/recenzii'
 import { Route as ProcesRouteImport } from './routes/proces'
 import { Route as DespreNoiRouteImport } from './routes/despre-noi'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortofoliuIndexRouteImport } from './routes/portofoliu.index'
 import { Route as PortofoliuSlugRouteImport } from './routes/portofoliu.$slug'
@@ -43,6 +44,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -61,6 +67,7 @@ const PortofoliuSlugRoute = PortofoliuSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/despre-noi': typeof DespreNoiRoute
   '/proces': typeof ProcesRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/despre-noi': typeof DespreNoiRoute
   '/proces': typeof ProcesRoute
@@ -82,6 +90,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/contact': typeof ContactRoute
   '/despre-noi': typeof DespreNoiRoute
   '/proces': typeof ProcesRoute
@@ -94,6 +103,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/calculator'
     | '/contact'
     | '/despre-noi'
     | '/proces'
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calculator'
     | '/contact'
     | '/despre-noi'
     | '/proces'
@@ -114,6 +125,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/calculator'
     | '/contact'
     | '/despre-noi'
     | '/proces'
@@ -125,6 +137,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalculatorRoute: typeof CalculatorRoute
   ContactRoute: typeof ContactRoute
   DespreNoiRoute: typeof DespreNoiRoute
   ProcesRoute: typeof ProcesRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -197,6 +217,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalculatorRoute: CalculatorRoute,
   ContactRoute: ContactRoute,
   DespreNoiRoute: DespreNoiRoute,
   ProcesRoute: ProcesRoute,

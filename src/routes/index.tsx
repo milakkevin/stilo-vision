@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Check, Star } from "lucide-react";
+import { ArrowUpRight, Check, Star, Calculator } from "lucide-react";
 import heroImg from "@/assets/hero-1.jpg";
 import { Reveal } from "@/components/Reveal";
 import { BeforeAfter } from "@/components/BeforeAfter";
@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-charcoal text-background">
+      <section className="relative min-h-[100svh] w-full overflow-hidden bg-charcoal text-background">
         <img
           src={heroImg}
           alt="Interior renovat premium — living cu iluminat ambiental și marmură"
@@ -41,40 +41,49 @@ function Home() {
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-        <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-20 md:px-16 md:pb-28">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
+        <div className="relative z-10 flex min-h-[100svh] flex-col justify-end px-4 pb-16 pt-32 sm:px-6 md:px-16 md:pb-28">
           <div className="animate-fade-in-slow mx-auto w-full max-w-7xl">
-            <div className="text-[10px] uppercase tracking-[0.42em] text-gold">
-              Renovări interioare premium · Satu Mare
+            <div className="text-[10px] uppercase tracking-[0.42em] text-gold sm:text-xs">
+              Renovări premium · Satu Mare
             </div>
-            <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.02] text-background md:text-7xl lg:text-[92px]">
-              Interioare gândite până la ultimul detaliu.
+            <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-7xl lg:text-[88px]">
+              Renovări la cheie. Executate ca la carte.
             </h1>
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-background/75 md:text-lg">
-              Coordonăm renovarea completă a caselor, apartamentelor și
-              spațiilor comerciale — de la primul desen până la predarea la
-              cheie. Finisaje selectate, execuție impecabilă, termene
-              respectate.
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-background/80 sm:text-base md:text-lg">
+              Case, apartamente și spații comerciale — coordonate integral,
+              cu finisaje selectate și termene respectate.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <ul className="mt-6 grid max-w-xl gap-2 text-sm text-background/85 sm:grid-cols-2">
+              {[
+                "O singură echipă coordonată",
+                "Termene ferme, respectate",
+                "Materiale verificate",
+                "Garanție pe manoperă",
+              ].map((b) => (
+                <li key={b} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 shrink-0 text-gold" strokeWidth={2} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                to="/calculator"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3.5 text-[11px] uppercase tracking-[0.24em] text-charcoal transition hover:bg-gold/90 sm:px-8 sm:py-4 sm:text-xs"
+              >
+                <Calculator className="h-4 w-4" />
+                Calculează prețul
+              </Link>
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-gold px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-charcoal transition hover:bg-gold/90"
+                className="group inline-flex items-center gap-2 rounded-full border border-background/40 px-6 py-3.5 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-background hover:text-charcoal sm:px-8 sm:py-4 sm:text-xs"
               >
                 Consultație gratuită
                 <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
-              <Link
-                to="/portofoliu"
-                className="rounded-full border border-background/40 px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-background transition hover:bg-background hover:text-charcoal"
-              >
-                Vezi proiectele
-              </Link>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em] text-background/60">
-          scroll
         </div>
       </section>
 
