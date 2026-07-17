@@ -1,16 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 
 const NAV = [
   { to: "/", label: "Acasă" },
-  { to: "/despre-noi", label: "Despre noi" },
+  { to: "/despre-noi", label: "Despre" },
   { to: "/servicii", label: "Servicii" },
   { to: "/portofoliu", label: "Portofoliu" },
+  { to: "/calculator", label: "Calculator" },
   { to: "/proces", label: "Proces" },
-  { to: "/recenzii", label: "Recenzii" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -25,55 +25,67 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Solid background: readable everywhere (over dark heroes, on light bodies).
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "border-b border-border/60 bg-background/85 backdrop-blur-xl"
-          : "bg-transparent"
+          ? "border-border/60 bg-background/90 backdrop-blur-xl"
+          : "border-transparent bg-[#0f0f10]/70 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
-        <Link to="/" className="flex items-center">
-          <Logo tone="dark" />
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 md:py-4 lg:grid-cols-[auto_1fr_auto] lg:px-10">
+        <Link to="/" className="flex min-w-0 items-center" aria-label="Stilo Renovation — acasă">
+          <Logo tone={scrolled ? "dark" : "light"} size="sm" />
         </Link>
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden justify-center gap-6 xl:gap-8 lg:flex">
           {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground transition hover:text-foreground"
-              activeProps={{ className: "text-foreground" }}
+              className={`text-[11px] uppercase tracking-[0.24em] transition ${
+                scrolled ? "text-muted-foreground hover:text-foreground" : "text-background/75 hover:text-background"
+              }`}
+              activeProps={{
+                className: scrolled ? "text-foreground" : "text-background",
+              }}
             >
               {n.label}
             </Link>
           ))}
         </nav>
-        <div className="hidden lg:block">
+        <div className="flex items-center gap-2">
           <a
             href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-            className="rounded-full border border-foreground/20 px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-foreground transition hover:border-foreground hover:bg-foreground hover:text-background"
+            className={`hidden items-center gap-2 rounded-full border px-4 py-2 text-[11px] uppercase tracking-[0.22em] transition sm:inline-flex ${
+              scrolled
+                ? "border-foreground/20 text-foreground hover:border-foreground hover:bg-foreground hover:text-background"
+                : "border-background/30 text-background hover:bg-background hover:text-charcoal"
+            }`}
           >
-            {SITE.phone}
+            <Phone className="h-3.5 w-3.5" />
+            <span className="hidden md:inline">{SITE.phone}</span>
           </a>
+          <button
+            className={`rounded-full border p-2 lg:hidden ${
+              scrolled ? "border-foreground/20 text-foreground" : "border-background/30 text-background"
+            }`}
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Meniu"
+          >
+            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
         </div>
-        <button
-          className="rounded-full border border-foreground/20 p-2 lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Meniu"
-        >
-          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-        </button>
       </div>
       {open && (
         <div className="border-t border-border/50 bg-background/95 backdrop-blur-xl lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col px-6 py-4">
+          <div className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6">
             {NAV.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/50 py-4 text-sm uppercase tracking-[0.24em] text-foreground"
+                className="border-b border-border/50 py-3.5 text-sm uppercase tracking-[0.24em] text-foreground"
               >
                 {n.label}
               </Link>

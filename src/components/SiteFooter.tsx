@@ -22,6 +22,7 @@ export function SiteFooter() {
             <li><Link to="/despre-noi" className="hover:text-background">Despre noi</Link></li>
             <li><Link to="/servicii" className="hover:text-background">Servicii</Link></li>
             <li><Link to="/portofoliu" className="hover:text-background">Portofoliu</Link></li>
+            <li><Link to="/calculator" className="hover:text-background">Calculator preț</Link></li>
             <li><Link to="/proces" className="hover:text-background">Procesul nostru</Link></li>
             <li><Link to="/recenzii" className="hover:text-background">Recenzii</Link></li>
             <li><Link to="/contact" className="hover:text-background">Contact</Link></li>
