@@ -33,10 +33,10 @@ function Page() {
         image={hero}
       />
 
-      <section className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:px-10">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-12 md:gap-14 md:px-10 md:py-24">
         <Reveal className="md:col-span-5">
           <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Informații</div>
-          <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+          <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl md:text-5xl">
             Suntem aici pentru dumneavoastră.
           </h2>
           <p className="mt-6 text-base text-muted-foreground">
@@ -80,10 +80,10 @@ function Page() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-6 md:px-10 md:pb-24">
         <div className="overflow-hidden rounded-3xl border border-border">
-          <div className="flex items-center justify-between bg-beige/50 px-6 py-4">
-            <div className="font-display text-lg text-foreground">
+          <div className="flex flex-col items-start justify-between gap-3 bg-beige/50 px-5 py-4 sm:flex-row sm:items-center sm:gap-4 sm:px-6">
+            <div className="font-display text-base text-foreground sm:text-lg">
               Ne găsiți în Satu Mare
             </div>
             <a
@@ -95,7 +95,7 @@ function Page() {
               Deschide în Google Maps
             </a>
           </div>
-          <div className="aspect-[16/8]">
+          <div className="aspect-[4/3] sm:aspect-[16/8]">
             <iframe
               title="Locație Stilo Renovation"
               src={SITE.mapsEmbed}
@@ -139,12 +139,12 @@ function ContactForm() {
   return (
     <form
       onSubmit={submit}
-      className="rounded-3xl border border-border bg-background p-8 md:p-10"
+      className="rounded-3xl border border-border bg-background p-6 sm:p-8 md:p-10"
     >
       <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
         Formular
       </div>
-      <h3 className="mt-3 font-display text-3xl text-foreground">
+      <h3 className="mt-3 font-display text-2xl text-foreground sm:text-3xl">
         Solicitați o consultație gratuită
       </h3>
       <p className="mt-3 text-sm text-muted-foreground">
@@ -211,9 +211,9 @@ function ContactForm() {
 
       <button
         type="submit"
-        className="mt-8 w-full rounded-full bg-foreground px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-background transition hover:bg-foreground/90 md:w-auto"
+        className="mt-8 w-full rounded-full bg-foreground px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-foreground/90 sm:px-8 sm:tracking-[0.28em] md:w-auto"
       >
-        Programează o consultație gratuită
+        Trimite cererea
       </button>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.

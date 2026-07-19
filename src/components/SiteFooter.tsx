@@ -6,7 +6,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-border/60 bg-[#0f0f10] text-background/80">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-4 md:px-10">
-        <div className="md:col-span-2">
+        <div className="sm:col-span-2 md:col-span-2">
           <Logo tone="light" />
           <p className="mt-6 max-w-md text-sm leading-relaxed text-background/60">
             Renovări interioare premium în Satu Mare și împrejurimi.
@@ -58,7 +58,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-background/50 md:flex-row md:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-background/50 sm:px-6 md:flex-row md:px-10">
           <div>© {new Date().getFullYear()} {SITE.legal}. Toate drepturile rezervate.</div>
           <div className="uppercase tracking-[0.28em]">Satu Mare · România</div>
         </div>

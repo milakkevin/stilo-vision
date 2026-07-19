@@ -29,10 +29,10 @@ function Page() {
         title="O echipă construită în jurul unei singure idei: să lăsăm în urmă lucrări de care suntem mândri."
         image={hero}
       />
-      <section className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:grid-cols-12 md:px-10">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-12 md:gap-16 md:px-10 md:py-24">
         <Reveal className="md:col-span-5">
           <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Povestea noastră</div>
-          <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+          <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl md:text-5xl">
             Din Satu Mare, cu mâinile pe fiecare detaliu.
           </h2>
         </Reveal>
@@ -53,7 +53,7 @@ function Page() {
       </section>
 
       <section className="border-y border-border/60 bg-beige/40">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:grid-cols-3 md:px-10">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:px-6 md:grid-cols-3 md:gap-10 md:px-10 md:py-24">
           {[
             {
               t: "Misiune",
@@ -82,7 +82,7 @@ function Page() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-4 md:px-10">
+      <section className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-5 py-16 sm:px-6 md:grid-cols-4 md:gap-14 md:px-10 md:py-24">
         {[
           { k: "10+", v: "Ani experiență" },
           { k: "120+", v: "Proiecte finalizate" },
@@ -91,7 +91,7 @@ function Page() {
         ].map((s) => (
           <Reveal key={s.v}>
             <div>
-              <div className="font-display text-6xl text-foreground">{s.k}</div>
+              <div className="font-display text-4xl text-foreground sm:text-5xl md:text-6xl">{s.k}</div>
               <div className="mt-4 text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
                 {s.v}
               </div>
@@ -118,16 +118,16 @@ export function PageHero({
   image: string;
 }) {
   return (
-    <section className="relative h-[70svh] min-h-[520px] w-full overflow-hidden bg-charcoal text-background">
+    <section className="relative h-[60svh] min-h-[420px] w-full overflow-hidden bg-charcoal text-background md:h-[70svh] md:min-h-[520px]">
       <img
         src={image}
         alt=""
         className="animate-hero-zoom absolute inset-0 h-full w-full object-cover opacity-70"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-16 md:px-10 md:pb-24">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 sm:px-6 md:px-10 md:pb-24">
         <div className="text-[10px] uppercase tracking-[0.42em] text-gold">{eyebrow}</div>
-        <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] md:text-7xl">
+        <h1 className="mt-4 max-w-4xl font-display text-[2rem] leading-[1.08] sm:text-4xl md:mt-6 md:text-7xl">
           {title}
         </h1>
       </div>

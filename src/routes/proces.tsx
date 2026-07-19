@@ -65,30 +65,30 @@ function Page() {
         image={hero}
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-32">
         <div className="relative">
           <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-gold/60 via-border to-transparent md:block" />
-          <div className="space-y-12 md:space-y-20">
+          <div className="space-y-10 md:space-y-20">
             {STEPS.map((s, i) => {
               const Icon = s.icon;
               return (
                 <Reveal key={s.n} delay={i * 60}>
-                  <div className="grid gap-8 md:grid-cols-12">
+                  <div className="grid gap-4 md:grid-cols-12 md:gap-8">
                     <div className="md:col-span-4">
                       <div className="flex items-center gap-4">
-                        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-gold bg-background">
+                        <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full border border-gold bg-background sm:h-12 sm:w-12">
                           <Icon className="h-5 w-5 text-gold" strokeWidth={1.4} />
                         </div>
-                        <div className="font-display text-5xl text-foreground/20">
+                        <div className="font-display text-4xl text-foreground/20 sm:text-5xl">
                           {s.n}
                         </div>
                       </div>
                     </div>
                     <div className="md:col-span-7 md:col-start-6">
-                      <h3 className="font-display text-3xl text-foreground md:text-4xl">
+                      <h3 className="font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
                         {s.title}
                       </h3>
-                      <p className="mt-4 max-w-xl text-base text-muted-foreground">
+                      <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base md:mt-4">
                         {s.d}
                       </p>
                     </div>
