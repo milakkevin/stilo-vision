@@ -6,6 +6,19 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 import before1 from "@/assets/before-1.jpg";
 
+import goia01 from "@/assets/goia/goia-01.jpg.asset.json";
+import goia02 from "@/assets/goia/goia-02.jpg.asset.json";
+import goia03 from "@/assets/goia/goia-03.jpg.asset.json";
+import goia04 from "@/assets/goia/goia-04.jpg.asset.json";
+import goia05 from "@/assets/goia/goia-05.jpg.asset.json";
+import goia06 from "@/assets/goia/goia-06.jpg.asset.json";
+import goia07 from "@/assets/goia/goia-07.jpg.asset.json";
+import goia08 from "@/assets/goia/goia-08.jpg.asset.json";
+import goia09 from "@/assets/goia/goia-09.jpg.asset.json";
+import goia10 from "@/assets/goia/goia-10.jpg.asset.json";
+
+const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
+
 export type Project = {
   slug: string;
   title: string;
@@ -17,21 +30,27 @@ export type Project = {
   after: string;
   description: string;
   services: string[];
+  badge?: string;
+  client?: string;
+  chips?: string[];
 };
 
 export const PROJECTS: Project[] = [
   {
     slug: "renovare-casa-completa",
-    title: "Renovare casă completă",
+    title: "Casă complet renovată",
     category: "Renovare completă",
     location: "Satu Mare",
-    cover: p1,
-    gallery: [p1, p3, p2],
+    cover: GOIA[0].url,
+    gallery: GOIA.map((g) => g.url),
     before: before1,
-    after: p1,
+    after: GOIA[0].url,
+    badge: "Proiect finalizat",
+    client: "Familia Goia",
     description:
-      "Renovare integrală a unei case de familie: reconfigurare spații, instalații noi, finisaje premium, tavane decorative cu iluminat ambiental și mobilier realizat la comandă.",
-    services: ["Renovări complete", "Finisaje premium", "Plafoane decorative", "Iluminat ambiental"],
+      "Renovare completă realizată pentru familia Goia, incluzând finisaje premium, instalații noi, băi, bucătărie și amenajări interioare moderne. Proiectul a fost executat cu atenție la fiecare detaliu, punând accent pe calitatea materialelor, funcționalitate și un design contemporan, adaptat nevoilor familiei.",
+    services: ["Renovări complete", "Finisaje premium", "Instalații noi", "Băi și bucătărie"],
+    chips: ["Renovare completă", "Finisaje premium", "Instalații noi", "Design modern", "Proiect rezidențial"],
   },
   {
     slug: "amenajare-restaurant",
