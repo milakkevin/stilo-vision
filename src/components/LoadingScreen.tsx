@@ -12,7 +12,7 @@ export function LoadingScreen() {
       return;
     }
 
-    const show = setTimeout(() => setVisible(true), 50);
+    const show = setTimeout(() => setVisible(true), 0);
     const hide = setTimeout(() => setVisible(false), 1400);
     const remove = setTimeout(() => {
       sessionStorage.setItem("stilo_loaded", "1");
