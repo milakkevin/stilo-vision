@@ -1,26 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { LogoMark } from "./Logo";
 
 export function LoadingScreen() {
   const [gone, setGone] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("stilo_loaded") === "1") {
       setGone(true);
       return;
     }
+    setVisible(true);
+  }, []);
 
-    const show = setTimeout(() => setVisible(true), 50);
-    const hide = setTimeout(() => setVisible(false), 1600);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem("stilo_loaded") === "1") return;
+
+    const hide = setTimeout(() => setVisible(false), 1400);
     const remove = setTimeout(() => {
       sessionStorage.setItem("stilo_loaded", "1");
       setGone(true);
-    }, 2300);
+    }, 2100);
 
     return () => {
-      clearTimeout(show);
       clearTimeout(hide);
       clearTimeout(remove);
     };
@@ -30,7 +34,7 @@ export function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-700 ease-in-out ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-700 ease-out ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       aria-hidden={!visible}
