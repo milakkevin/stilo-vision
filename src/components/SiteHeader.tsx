@@ -17,12 +17,24 @@ const NAV = [
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const alreadyLoaded = sessionStorage.getItem("stilo_loaded") === "1";
+    if (alreadyLoaded) {
+      setRevealed(true);
+      return;
+    }
+    const timer = setTimeout(() => setRevealed(true), 1500);
+    return () => clearTimeout(timer);
   }, []);
 
   // Solid background: readable everywhere (over dark heroes, on light bodies).
