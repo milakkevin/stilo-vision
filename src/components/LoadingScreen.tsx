@@ -18,11 +18,11 @@ export function LoadingScreen() {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("stilo_loaded") === "1") return;
 
-    const hide = setTimeout(() => setVisible(false), 1400);
+    const hide = setTimeout(() => setVisible(false), 2000);
     const remove = setTimeout(() => {
       sessionStorage.setItem("stilo_loaded", "1");
       setGone(true);
-    }, 2100);
+    }, 2900);
 
     return () => {
       clearTimeout(hide);
@@ -34,7 +34,7 @@ export function LoadingScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-700 ease-out ${
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-background transition-opacity duration-[900ms] ease-in-out ${
         visible ? "opacity-100" : "opacity-0"
       }`}
       aria-hidden={!visible}
