@@ -33,7 +33,7 @@ export function SiteHeader() {
       setRevealed(true);
       return;
     }
-    const timer = setTimeout(() => setRevealed(true), 1500);
+    const timer = setTimeout(() => setRevealed(true), 2100);
     return () => clearTimeout(timer);
   }, []);
 
