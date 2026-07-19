@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { LogoMark } from "./Logo";
 
 export function LoadingScreen() {
   const [gone, setGone] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem("stilo_loaded") === "1") {
       setGone(true);
       return;
     }
+    setVisible(true);
+  }, []);
 
-    const show = setTimeout(() => setVisible(true), 0);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem("stilo_loaded") === "1") return;
+
     const hide = setTimeout(() => setVisible(false), 1400);
     const remove = setTimeout(() => {
       sessionStorage.setItem("stilo_loaded", "1");
@@ -20,7 +25,6 @@ export function LoadingScreen() {
     }, 2100);
 
     return () => {
-      clearTimeout(show);
       clearTimeout(hide);
       clearTimeout(remove);
     };
