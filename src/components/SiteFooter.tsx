@@ -9,9 +9,9 @@ export function SiteFooter() {
         <div className="sm:col-span-2 md:col-span-2">
           <Logo tone="light" />
           <p className="mt-6 max-w-md text-sm leading-relaxed text-background/60">
-            Renovări interioare premium în Satu Mare și împrejurimi.
-            Echipă serioasă, execuție impecabilă, finisaje la standarde
-            înalte — de la apartamente și case, până la spații comerciale.
+            Renovări interioare premium în Satu Mare și împrejurimi. Echipă serioasă,
+            execuție impecabilă, finisaje la standarde înalte — Scopul nostru e de a
+            transforma dorinta in realitate
           </p>
         </div>
         <div>
