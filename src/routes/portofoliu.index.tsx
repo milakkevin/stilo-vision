@@ -33,10 +33,10 @@ function Page() {
         image={hero}
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
-        <div className="columns-1 gap-6 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-32">
+        <div className="columns-1 gap-4 sm:columns-2 sm:gap-6 lg:columns-3 [column-fill:_balance]">
           {PROJECTS.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 60} className="mb-6 inline-block w-full">
+            <Reveal key={p.slug} delay={(i % 3) * 60} className="mb-4 inline-block w-full sm:mb-6">
               <Link
                 to="/portofoliu/$slug"
                 params={{ slug: p.slug }}

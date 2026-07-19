@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[100svh] w-full overflow-hidden bg-charcoal text-background">
+      <section className="relative min-h-[92svh] w-full overflow-hidden bg-charcoal text-background md:min-h-[100svh]">
         <img
           src={heroImg}
           alt="Interior renovat premium — living cu iluminat ambiental și marmură"
@@ -42,15 +42,15 @@ function Home() {
           height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/85" />
-        <div className="relative z-10 flex min-h-[100svh] flex-col justify-end px-4 pb-16 pt-32 sm:px-6 md:px-16 md:pb-28">
+        <div className="relative z-10 flex min-h-[92svh] flex-col justify-end px-5 pb-12 pt-28 sm:px-6 md:min-h-[100svh] md:px-16 md:pb-28 md:pt-32">
           <div className="animate-fade-in-slow mx-auto w-full max-w-7xl">
             <div className="text-[10px] uppercase tracking-[0.42em] text-gold sm:text-xs">
               Renovări premium · Satu Mare
             </div>
-            <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] text-background sm:text-5xl md:text-7xl lg:text-[88px]">
+            <h1 className="mt-4 max-w-4xl font-display text-[2.1rem] leading-[1.05] text-background sm:text-5xl md:mt-5 md:text-7xl lg:text-[88px]">
               Renovări la cheie.<br />Privește-ți noua casă.
             </h1>
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-background/80 sm:text-base md:text-lg">
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-background/80 sm:text-base md:mt-6 md:text-lg">
               Case, apartamente și spații comerciale — coordonate integral,
               cu finisaje selectate și termene respectate.
             </p>
@@ -88,12 +88,12 @@ function Home() {
       </section>
 
       {/* INTRO */}
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-28 md:grid-cols-12 md:px-10 md:py-36">
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-16 sm:px-6 md:grid-cols-12 md:gap-12 md:px-10 md:py-36">
         <Reveal className="md:col-span-5">
           <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
             Despre Stilo Renovation
           </div>
-          <h2 className="mt-6 font-display text-4xl leading-tight text-foreground md:text-5xl">
+          <h2 className="mt-6 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
             Renovări executate cu răbdare, cu atenție și cu respect pentru fiecare metru pătrat.
           </h2>
         </Reveal>
@@ -106,14 +106,14 @@ function Home() {
             termene realiste și o singură echipă responsabilă pentru
             întregul proiect.
           </p>
-          <div className="mt-10 grid grid-cols-3 gap-8">
+          <div className="mt-8 grid grid-cols-3 gap-6 md:mt-10 md:gap-8">
             {[
               { k: "10+", v: "Ani experiență" },
               { k: "120+", v: "Proiecte finalizate" },
               { k: "5.0", v: "Rating Google" },
             ].map((s) => (
               <div key={s.v}>
-                <div className="font-display text-4xl text-foreground">{s.k}</div>
+                <div className="font-display text-3xl text-foreground sm:text-4xl">{s.k}</div>
                 <div className="mt-2 text-[10px] uppercase tracking-[0.24em] text-muted-foreground">
                   {s.v}
                 </div>
@@ -125,13 +125,13 @@ function Home() {
 
       {/* SERVICES */}
       <section className="border-y border-border/60 bg-beige/40">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-32">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <Reveal>
               <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
                 Servicii
               </div>
-              <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 max-w-2xl font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
                 Tot ce aveți nevoie pentru o renovare completă.
               </h2>
             </Reveal>
@@ -142,17 +142,17 @@ function Home() {
               Toate serviciile →
             </Link>
           </div>
-          <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 md:mt-16 lg:grid-cols-4">
             {featuredServices.map((s) => {
               const Icon = s.icon;
               return (
                 <Link
                   to="/servicii"
                   key={s.slug}
-                  className="group flex flex-col gap-5 bg-background p-8 transition hover:bg-background/60"
+                  className="group flex flex-col gap-4 bg-background p-6 transition hover:bg-background/60 sm:gap-5 sm:p-8"
                 >
                   <Icon className="h-6 w-6 text-gold" strokeWidth={1.4} />
-                  <div className="font-display text-2xl text-foreground">
+                  <div className="font-display text-xl text-foreground sm:text-2xl">
                     {s.title}
                   </div>
                   <p className="text-sm leading-relaxed text-muted-foreground">
@@ -169,13 +169,13 @@ function Home() {
       </section>
 
       {/* BEFORE / AFTER */}
-      <section className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
-        <div className="grid gap-12 md:grid-cols-12">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-36">
+        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
           <Reveal className="md:col-span-5">
             <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
               Transformări
             </div>
-            <h2 className="mt-6 font-display text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-6 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
               Înainte și după. Diferența făcută de o echipă profesionistă.
             </h2>
             <p className="mt-6 text-base text-muted-foreground">
@@ -184,7 +184,7 @@ function Home() {
             </p>
             <Link
               to="/portofoliu"
-              className="mt-10 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-foreground underline-offset-8 hover:underline"
+              className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-foreground underline-offset-8 hover:underline md:mt-10"
             >
               Vezi toate proiectele →
             </Link>
@@ -200,18 +200,18 @@ function Home() {
       </section>
 
       {/* RECENT PROJECTS */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-6 md:px-10 md:pb-24">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
               Proiecte recente
             </div>
-            <h2 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
               O selecție din munca noastră.
             </h2>
           </Reveal>
         </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-16 md:gap-6">
           {featured.map((p, i) => (
             <Reveal key={p.slug} delay={i * 80}>
               <Link
@@ -229,12 +229,12 @@ function Home() {
                     className="h-full w-full object-cover transition duration-[1200ms] group-hover:scale-105"
                   />
                 </div>
-                <div className="flex items-end justify-between p-6">
+                <div className="flex items-end justify-between p-5 sm:p-6">
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">
                       {p.category} · {p.location}
                     </div>
-                    <div className="mt-2 font-display text-2xl text-foreground">
+                    <div className="mt-2 font-display text-xl text-foreground sm:text-2xl">
                       {p.title}
                     </div>
                   </div>
@@ -248,16 +248,16 @@ function Home() {
 
       {/* WHY CHOOSE US */}
       <section className="border-y border-border/60 bg-beige/40">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-32">
           <Reveal>
             <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
               De ce Stilo
             </div>
-            <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 max-w-2xl font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
               Seriozitate, organizare, calitate.
             </h2>
           </Reveal>
-          <div className="mt-14 grid gap-10 md:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 md:mt-14 md:grid-cols-3 md:gap-10">
             {[
               {
                 t: "O singură echipă",
@@ -301,14 +301,14 @@ function Home() {
       </section>
 
       {/* REVIEWS */}
-      <section className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-36">
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
               <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
                 Recenzii Google
               </div>
-              <h2 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl">
+              <h2 className="mt-4 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
                 Ce spun clienții noștri.
               </h2>
             </div>
@@ -322,16 +322,16 @@ function Home() {
             </div>
           </div>
         </Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-2 md:gap-6">
           {REVIEWS.slice(0, 2).map((r, i) => (
             <Reveal key={r.name} delay={i * 100}>
-              <div className="flex h-full flex-col gap-6 rounded-2xl border border-border bg-background p-8">
+              <div className="flex h-full flex-col gap-5 rounded-2xl border border-border bg-background p-6 sm:gap-6 sm:p-8">
                 <div className="flex">
                   {Array.from({ length: r.rating }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-gold text-gold" />
                   ))}
                 </div>
-                <p className="font-display text-2xl leading-snug text-foreground">
+                <p className="font-display text-xl leading-snug text-foreground sm:text-2xl">
                   "{r.text}"
                 </p>
                 <div className="mt-auto flex items-center justify-between border-t border-border pt-6">
@@ -355,13 +355,13 @@ function Home() {
       </section>
 
       {/* MAP */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-10">
-        <div className="grid gap-10 rounded-3xl bg-beige/50 p-8 md:grid-cols-2 md:p-12">
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-6 md:px-10 md:pb-24">
+        <div className="grid gap-8 rounded-3xl bg-beige/50 p-6 sm:p-8 md:grid-cols-2 md:gap-10 md:p-12">
           <div>
             <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
               Zonă de acoperire
             </div>
-            <h2 className="mt-4 font-display text-3xl text-foreground md:text-4xl">
+            <h2 className="mt-4 font-display text-2xl text-foreground sm:text-3xl md:text-4xl">
               Satu Mare și împrejurimi
             </h2>
             <p className="mt-4 text-sm text-muted-foreground">

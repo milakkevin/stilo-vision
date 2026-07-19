@@ -56,11 +56,11 @@ function Page() {
         image={hero}
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-24 md:px-10 md:py-32">
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-32">
         <Reveal>
           <div className="max-w-2xl">
             <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Ce facem</div>
-            <h2 className="mt-4 font-display text-4xl leading-tight text-foreground md:text-5xl">
+            <h2 className="mt-4 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">
               Toate meseriile pe același șantier.
             </h2>
             <p className="mt-6 text-base text-muted-foreground">
@@ -71,13 +71,13 @@ function Page() {
           </div>
         </Reveal>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
           {SERVICES.map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.slug} className="group flex flex-col gap-5 bg-background p-8 transition hover:bg-beige/40">
+              <div key={s.slug} className="group flex flex-col gap-4 bg-background p-6 transition hover:bg-beige/40 sm:gap-5 sm:p-8">
                 <Icon className="h-7 w-7 text-gold" strokeWidth={1.4} />
-                <div className="font-display text-2xl text-foreground">{s.title}</div>
+                <div className="font-display text-xl text-foreground sm:text-2xl">{s.title}</div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {s.short}
                 </p>
@@ -95,11 +95,11 @@ function Page() {
       </section>
 
       <section className="border-y border-border/60 bg-beige/40">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
-          <div className="grid gap-14 md:grid-cols-2">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-10 md:py-24">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-14">
             <Reveal>
               <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Beneficii</div>
-              <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+              <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl md:text-5xl">
                 De ce să alegeți o echipă completă.
               </h2>
               <ul className="mt-8 space-y-4 text-base text-muted-foreground">
@@ -112,7 +112,7 @@ function Page() {
             </Reveal>
             <Reveal delay={120}>
               <div className="text-[10px] uppercase tracking-[0.4em] text-gold">Cum decurge</div>
-              <h2 className="mt-4 font-display text-4xl text-foreground md:text-5xl">
+              <h2 className="mt-4 font-display text-3xl text-foreground sm:text-4xl md:text-5xl">
                 Procesul, pe scurt.
               </h2>
               <ol className="mt-8 space-y-4 text-base text-muted-foreground">

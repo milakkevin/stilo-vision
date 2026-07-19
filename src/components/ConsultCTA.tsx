@@ -8,29 +8,29 @@ export function ConsultCTA({
   subtitle?: string;
 }) {
   return (
-    <section className="mx-auto my-24 max-w-7xl px-6 md:px-10">
-      <div className="relative overflow-hidden rounded-3xl bg-[#0f0f10] px-8 py-16 text-background md:px-16 md:py-24">
+    <section className="mx-auto my-16 max-w-7xl px-5 sm:px-6 md:my-24 md:px-10">
+      <div className="relative overflow-hidden rounded-3xl bg-[#0f0f10] px-6 py-14 text-background sm:px-8 md:px-16 md:py-24">
         <div className="absolute inset-0 opacity-30 [background:radial-gradient(60%_60%_at_80%_20%,var(--gold),transparent_60%)]" />
         <div className="relative mx-auto max-w-3xl text-center">
           <div className="text-[10px] uppercase tracking-[0.4em] text-gold">
             Consultație gratuită
           </div>
-          <h2 className="mt-6 font-display text-4xl leading-tight md:text-6xl">
+          <h2 className="mt-5 font-display text-3xl leading-tight sm:text-4xl md:mt-6 md:text-6xl">
             {title}
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-base text-background/70">
+          <p className="mx-auto mt-5 max-w-xl text-sm text-background/70 sm:text-base md:mt-6">
             {subtitle}
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mt-10">
             <Link
               to="/contact"
-              className="rounded-full bg-gold px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-charcoal transition hover:bg-gold/90"
+              className="rounded-full bg-gold px-6 py-3.5 text-center text-[11px] uppercase tracking-[0.22em] text-charcoal transition hover:bg-gold/90 sm:px-8 sm:py-4 sm:tracking-[0.28em]"
             >
-              Programează o consultație
+              Programează consultație
             </Link>
             <Link
               to="/portofoliu"
-              className="rounded-full border border-background/30 px-8 py-4 text-[11px] uppercase tracking-[0.28em] text-background transition hover:border-background hover:bg-background hover:text-charcoal"
+              className="rounded-full border border-background/30 px-6 py-3.5 text-center text-[11px] uppercase tracking-[0.22em] text-background transition hover:border-background hover:bg-background hover:text-charcoal sm:px-8 sm:py-4 sm:tracking-[0.28em]"
             >
               Vezi portofoliul
             </Link>
