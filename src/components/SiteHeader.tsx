@@ -40,11 +40,11 @@ export function SiteHeader() {
   // Solid background: readable everywhere (over dark heroes, on light bodies).
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-500 ease-out ${
         scrolled
           ? "border-border/60 bg-background/90 backdrop-blur-xl"
           : "border-transparent bg-[#0f0f10]/70 backdrop-blur-md"
-      }`}
+      } ${revealed ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"}`}
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-6 md:py-4 lg:grid-cols-[auto_1fr_auto] lg:px-10">
         <Link to="/" className="flex min-w-0 items-center" aria-label="Stilo Renovation — acasă">
