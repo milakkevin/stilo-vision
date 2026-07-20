@@ -66,6 +66,13 @@ import er03 from "@/assets/exterior-renovat/exterior-03.png.asset.json";
 import er04 from "@/assets/exterior-renovat/exterior-04.png.asset.json";
 import er05 from "@/assets/exterior-renovat/exterior-05.png.asset.json";
 import er06 from "@/assets/exterior-renovat/exterior-06.png.asset.json";
+import er07 from "@/assets/exterior-renovat/ext-new-46.jpg.asset.json";
+import er08 from "@/assets/exterior-renovat/ext-new-47.jpg.asset.json";
+import er09 from "@/assets/exterior-renovat/ext-new-48.jpg.asset.json";
+import er10 from "@/assets/exterior-renovat/ext-new-49.jpg.asset.json";
+import er11 from "@/assets/exterior-renovat/ext-new-50.jpg.asset.json";
+import er12 from "@/assets/exterior-renovat/ext-new-51.jpg.asset.json";
+import er13 from "@/assets/exterior-renovat/ext-new-52.jpg.asset.json";
 
 const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
 const CLINICA_ALTS = [
