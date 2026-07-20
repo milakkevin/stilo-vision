@@ -150,12 +150,9 @@ function ContactForm() {
     setSent(true);
   };
 
-  const openWhatsApp = () => {
+  const whatsappHref = () => {
     const text = `Bună! Sunt ${form.nume || "[nume]"}. Tip proiect: ${form.tip}. Telefon: ${form.telefon || "[telefon]"}. ${form.mesaj}`;
-    window.open(
-      `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(text)}`,
-      "_blank",
-    );
+    return `https://wa.me/40742914164?text=${encodeURIComponent(text)}`;
   };
 
   return (
