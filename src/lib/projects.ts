@@ -66,6 +66,13 @@ import er03 from "@/assets/exterior-renovat/exterior-03.png.asset.json";
 import er04 from "@/assets/exterior-renovat/exterior-04.png.asset.json";
 import er05 from "@/assets/exterior-renovat/exterior-05.png.asset.json";
 import er06 from "@/assets/exterior-renovat/exterior-06.png.asset.json";
+import er07 from "@/assets/exterior-renovat/ext-new-46.jpg.asset.json";
+import er08 from "@/assets/exterior-renovat/ext-new-47.jpg.asset.json";
+import er09 from "@/assets/exterior-renovat/ext-new-48.jpg.asset.json";
+import er10 from "@/assets/exterior-renovat/ext-new-49.jpg.asset.json";
+import er11 from "@/assets/exterior-renovat/ext-new-50.jpg.asset.json";
+import er12 from "@/assets/exterior-renovat/ext-new-51.jpg.asset.json";
+import er13 from "@/assets/exterior-renovat/ext-new-52.jpg.asset.json";
 
 const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
 const CLINICA_ALTS = [
@@ -80,7 +87,7 @@ const CLINICA_ALTS = [
   "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
 ];
 
-const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06] as unknown as { url: string }[];
+const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06, er07, er08, er09, er10, er11, er12, er13] as unknown as { url: string }[];
 const EXTERIOR_RENOVAT_ALTS = [
   "Fațadă veche înainte de renovare, cu structură provizorie din lemn",
   "Casa în etapa inițială de extindere și consolidare exterioară",
@@ -88,6 +95,13 @@ const EXTERIOR_RENOVAT_ALTS = [
   "Ridicarea frontonului și a structurii superioare din lemn",
   "Placare și termoizolație exterioară în curs de execuție",
   "Fațadă aproape finalizată, pregătită pentru finisajele finale",
+  "Lucrări nocturne la terasă cu structură nouă din lemn și pavaj montat",
+  "Fațada finalizată cu tencuială albă, acoperiș nou și terasă acoperită",
+  "Vedere laterală a casei renovate cu stâlpi din lemn și jgheaburi noi",
+  "Casa finalizată exterior — fațadă curată, ferestre noi și acoperiș din țiglă metalică",
+  "Scară interioară din lemn masiv, gata pentru finisaje",
+  "Interior amenajat la parter cu pereți finisați și grinzi aparente",
+  "Mansardă spațioasă cu tavan înalt, ferestre noi și structură din lemn",
 ];
 
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
@@ -279,11 +293,11 @@ export const PROJECTS: Project[] = [
     title: "Exterior renovat",
     category: "Renovare exterior casă",
     location: "Satu Mare",
-    cover: EXTERIOR_RENOVAT[5].url,
+    cover: EXTERIOR_RENOVAT[9].url,
     gallery: EXTERIOR_RENOVAT.map((img) => img.url),
     galleryAlts: EXTERIOR_RENOVAT_ALTS,
     before: EXTERIOR_RENOVAT[0].url,
-    after: EXTERIOR_RENOVAT[5].url,
+    after: EXTERIOR_RENOVAT[9].url,
     badge: "Proiect finalizat",
     description:
       "Evoluția completă a renovării exterioare, de la structura veche și extinderea din lemn, până la ridicarea noii forme a casei, placarea exterioară și pregătirea pentru finisajele finale. Proiectul evidențiază etapele reale de transformare și execuția atentă a fiecărui detaliu structural și estetic.",
