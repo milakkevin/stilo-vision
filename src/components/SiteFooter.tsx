@@ -44,6 +44,10 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
+              <a href={`mailto:${SITE.email}`} className="hover:text-background break-all">
+                {SITE.email}
+              </a>
+            </li>
               <a href={SITE.mapsLink} target="_blank" rel="noreferrer" className="hover:text-background">
                 {SITE.city} și împrejurimi
               </a>
