@@ -298,7 +298,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "spatiu-comercial",
-    title: "Restaurantul \"BULL\"",
+    title: "Restaurantul \"The Bull\"",
     category: "Renovare și amenajare spațiu comercial",
     location: "Satu Mare",
     cover: SPATIU_COMERCIAL[0].url,
