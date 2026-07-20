@@ -58,6 +58,13 @@ function Page() {
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">Scrieți-ne pe WhatsApp</div>
               </div>
             </a>
+            <a href={`mailto:${SITE.email}`} className="flex items-start gap-4 group">
+              <Mail className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Email</div>
+                <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4 break-all">{SITE.email}</div>
+              </div>
+            </a>
             <div className="flex items-start gap-4">
               <MapPin className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
               <div>
