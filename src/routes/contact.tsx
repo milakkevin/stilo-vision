@@ -51,7 +51,7 @@ function Page() {
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">{SITE.phone}</div>
               </div>
             </a>
-            <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
               <MessageCircle className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
               <div>
                 <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</div>
@@ -96,7 +96,7 @@ function Page() {
             <a
               href={SITE.mapsLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="rounded-full bg-foreground px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-background"
             >
               Deschide în Google Maps
