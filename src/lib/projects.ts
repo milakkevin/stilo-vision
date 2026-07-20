@@ -60,6 +60,13 @@ import cd07 from "@/assets/clinica-dentara/clinica-07.png.asset.json";
 import cd08 from "@/assets/clinica-dentara/clinica-08.png.asset.json";
 import cd09 from "@/assets/clinica-dentara/clinica-09.png.asset.json";
 
+import er01 from "@/assets/exterior-renovat/exterior-01.png.asset.json";
+import er02 from "@/assets/exterior-renovat/exterior-02.png.asset.json";
+import er03 from "@/assets/exterior-renovat/exterior-03.png.asset.json";
+import er04 from "@/assets/exterior-renovat/exterior-04.png.asset.json";
+import er05 from "@/assets/exterior-renovat/exterior-05.png.asset.json";
+import er06 from "@/assets/exterior-renovat/exterior-06.png.asset.json";
+
 const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
 const CLINICA_ALTS = [
   "Structură tavan circular din rigips — etapa de construcție",
@@ -71,6 +78,16 @@ const CLINICA_ALTS = [
   "Cabinet stomatologic finalizat cu iluminat decorativ și placări din lemn",
   "Cabinet dentar modern cu mobilier la comandă și lustră decorativă",
   "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
+];
+
+const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06] as unknown as { url: string }[];
+const EXTERIOR_RENOVAT_ALTS = [
+  "Fațadă veche înainte de renovare, cu structură provizorie din lemn",
+  "Casa în etapa inițială de extindere și consolidare exterioară",
+  "Montaj structură nouă pe fațada casei",
+  "Ridicarea frontonului și a structurii superioare din lemn",
+  "Placare și termoizolație exterioară în curs de execuție",
+  "Fațadă aproape finalizată, pregătită pentru finisajele finale",
 ];
 
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
@@ -260,15 +277,18 @@ export const PROJECTS: Project[] = [
   {
     slug: "exterior-renovat",
     title: "Exterior renovat",
-    category: "Renovare casă",
+    category: "Renovare exterior casă",
     location: "Satu Mare",
-    cover: p5,
-    gallery: [p5, p1, p3],
-    before: before1,
-    after: p5,
+    cover: EXTERIOR_RENOVAT[5].url,
+    gallery: EXTERIOR_RENOVAT.map((img) => img.url),
+    galleryAlts: EXTERIOR_RENOVAT_ALTS,
+    before: EXTERIOR_RENOVAT[0].url,
+    after: EXTERIOR_RENOVAT[5].url,
+    badge: "Proiect finalizat",
     description:
-      "Renovare completă a unei fațade: termoizolație, finisaje decorative, tâmplărie nouă și iluminat arhitectural care evidențiază volumele casei la lăsarea serii.",
-    services: ["Renovări case", "Finisaje premium", "Iluminat", "Instalații"],
+      "Evoluția completă a renovării exterioare, de la structura veche și extinderea din lemn, până la ridicarea noii forme a casei, placarea exterioară și pregătirea pentru finisajele finale. Proiectul evidențiază etapele reale de transformare și execuția atentă a fiecărui detaliu structural și estetic.",
+    services: ["Extindere și consolidare", "Structură din lemn", "Placare exterioară", "Termoizolație", "Finisaje fațadă"],
+    chips: ["Evoluție proiect", "Renovare exterior", "Extindere casă", "Termoizolație", "Proiect rezidențial"],
   },
 ];
 
