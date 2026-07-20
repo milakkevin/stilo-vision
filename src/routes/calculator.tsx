@@ -50,6 +50,39 @@ export const Route = createFileRoute("/calculator")({
   component: Page,
 });
 
+// ============ WhatsApp ============
+const WHATSAPP_NUMBER = "40742914164";
+
+function openWhatsAppEstimate({
+  space,
+  sqm,
+  tier,
+  price,
+}: {
+  space: SpaceType | null;
+  sqm: number;
+  tier: Tier | null;
+  price: { mid: number; low: number; high: number; size: number } | null;
+}) {
+  const spaceLabel = SPACES.find((s) => s.id === space)?.label ?? "—";
+  const tierLabel = TIERS.find((t) => t.id === tier)?.label ?? "—";
+  const estimate = price
+    ? `${price.low.toLocaleString("ro-RO")}–${price.high.toLocaleString("ro-RO")} €`
+    : "—";
+  const message = [
+    "Bună! Am folosit configuratorul:",
+    "",
+    `Tip proiect: ${spaceLabel}`,
+    `Suprafață: ${sqm} m²`,
+    `Pachet: ${tierLabel}`,
+    `Estimare: ${estimate}`,
+    "",
+    "Aș dori o ofertă personalizată.",
+  ].join("\n");
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
+
 // ============ Data ============
 type SpaceType = "apartament" | "casa" | "comercial";
 type Tier = "cosmetic" | "standard" | "premium" | "lux";
