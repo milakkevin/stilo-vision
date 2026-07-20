@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { Reveal } from "@/components/Reveal";
 import { SITE, whatsappUrl } from "@/lib/site";
@@ -56,6 +56,13 @@ function Page() {
               <div>
                 <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</div>
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">Scrieți-ne pe WhatsApp</div>
+              </div>
+            </a>
+            <a href={`mailto:${SITE.email}`} className="flex items-start gap-4 group">
+              <Mail className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Email</div>
+                <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4 break-all">{SITE.email}</div>
               </div>
             </a>
             <div className="flex items-start gap-4">
@@ -125,15 +132,30 @@ function ContactForm() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation
     if (!form.nume.trim() || !form.telefon.trim()) return;
-    // Fallback: open WhatsApp with prefilled message
-    const text = `Bună! Sunt ${form.nume}. Tip proiect: ${form.tip}. Telefon: ${form.telefon}. Email: ${form.email}. ${form.mesaj}`;
+
+    const subject = `Cerere consultație — ${form.tip} (${form.nume})`;
+    const body = [
+      `Nume: ${form.nume}`,
+      `Telefon: ${form.telefon}`,
+      `Email: ${form.email || "—"}`,
+      `Tip proiect: ${form.tip}`,
+      "",
+      "Mesaj:",
+      form.mesaj || "—",
+    ].join("\n");
+
+    // Trimite email către Stilo Renovation
+    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+  };
+
+  const openWhatsApp = () => {
+    const text = `Bună! Sunt ${form.nume || "[nume]"}. Tip proiect: ${form.tip}. Telefon: ${form.telefon || "[telefon]"}. ${form.mesaj}`;
     window.open(
       `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(text)}`,
       "_blank",
     );
-    setSent(true);
   };
 
   return (
@@ -209,18 +231,27 @@ function ContactForm() {
         </Field>
       </div>
 
-      <button
-        type="submit"
-        className="mt-8 w-full rounded-full bg-foreground px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-foreground/90 sm:px-8 sm:tracking-[0.28em] md:w-auto"
-      >
-        Trimite cererea
-      </button>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button
+          type="submit"
+          className="w-full rounded-full bg-foreground px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-foreground/90 sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        >
+          Trimite pe email
+        </button>
+        <button
+          type="button"
+          onClick={openWhatsApp}
+          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        >
+          Trimite pe WhatsApp
+        </button>
+      </div>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.
       </p>
       {sent && (
         <p className="mt-4 rounded-lg bg-gold/20 px-4 py-3 text-sm text-foreground">
-          Mulțumim! Am deschis WhatsApp cu detaliile — apăsați trimite pentru a finaliza.
+          Mulțumim! Am deschis aplicația de email cu detaliile completate — apăsați trimite pentru a finaliza. Vă răspundem cât mai curând.
         </p>
       )}
     </form>
