@@ -646,18 +646,13 @@ function EstimateCard({
         final se stabilește după vizita la locație.
       </p>
 
-      <a
-        href={`https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(
-          `Bună! Am folosit configuratorul: ${spaceLabel}, ${sqm} m², ${tierLabel}. Estimare: ${
-            price ? `${price.low}–${price.high} €` : "—"
-          }. Aș vrea o ofertă personalizată.`,
-        )}`}
-        target="_blank"
-        rel="noreferrer"
+      <button
+        type="button"
+        onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-6 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
       >
         Solicită oferta personalizată
-      </a>
+      </button>
     </div>
   );
 }
