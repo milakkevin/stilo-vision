@@ -4,6 +4,7 @@ export const SITE = {
   city: "Satu Mare",
   phone: "0742 914 164",
   phoneIntl: "40742914164",
+  email: "stilorenovation@gmail.com",
   hours: "Luni – Vineri, până la 17:00",
   whatsappMsg:
     "Bună! Aș dori o consultație gratuită pentru un proiect de renovare.",
