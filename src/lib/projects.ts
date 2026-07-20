@@ -60,6 +60,13 @@ import cd07 from "@/assets/clinica-dentara/clinica-07.png.asset.json";
 import cd08 from "@/assets/clinica-dentara/clinica-08.png.asset.json";
 import cd09 from "@/assets/clinica-dentara/clinica-09.png.asset.json";
 
+import er01 from "@/assets/exterior-renovat/exterior-01.png.asset.json";
+import er02 from "@/assets/exterior-renovat/exterior-02.png.asset.json";
+import er03 from "@/assets/exterior-renovat/exterior-03.png.asset.json";
+import er04 from "@/assets/exterior-renovat/exterior-04.png.asset.json";
+import er05 from "@/assets/exterior-renovat/exterior-05.png.asset.json";
+import er06 from "@/assets/exterior-renovat/exterior-06.png.asset.json";
+
 const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
 const CLINICA_ALTS = [
   "Structură tavan circular din rigips — etapa de construcție",
@@ -71,6 +78,16 @@ const CLINICA_ALTS = [
   "Cabinet stomatologic finalizat cu iluminat decorativ și placări din lemn",
   "Cabinet dentar modern cu mobilier la comandă și lustră decorativă",
   "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
+];
+
+const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er43, er05, er06] as unknown as { url: string }[];
+const EXTERIOR_RENOVAT_ALTS = [
+  "Fațadă veche înainte de renovare, cu structură provizorie din lemn",
+  "Casa în etapa inițială de extindere și consolidare exterioară",
+  "Montaj structură nouă pe fațada casei",
+  "Ridicarea frontonului și a structurii superioare din lemn",
+  "Placare și termoizolație exterioară în curs de execuție",
+  "Fațadă aproape finalizată, pregătită pentru finisajele finale",
 ];
 
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
