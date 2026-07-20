@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { ConsultCTA } from "@/components/ConsultCTA";
+import { openWhatsApp } from "@/lib/site";
 
 import hero from "@/assets/project-2.jpg";
 
@@ -51,9 +52,7 @@ export const Route = createFileRoute("/calculator")({
 });
 
 // ============ WhatsApp ============
-const WHATSAPP_NUMBER = "40742914164";
-
-function buildWhatsAppEstimateUrl({
+function openWhatsAppEstimate({
   space,
   sqm,
   tier,
@@ -69,17 +68,15 @@ function buildWhatsAppEstimateUrl({
   const estimate = price
     ? `${price.low.toLocaleString("ro-RO")}–${price.high.toLocaleString("ro-RO")} €`
     : "—";
-  const message = [
-    "Bună! Am folosit configuratorul:",
-    "",
-    `Tip proiect: ${spaceLabel}`,
-    `Suprafață: ${sqm} m²`,
-    `Pachet: ${tierLabel}`,
-    `Estimare: ${estimate}`,
-    "",
-    "Aș dori o ofertă personalizată.",
-  ].join("\n");
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  const projectType = `${spaceLabel} / ${sqm} m² / ${tierLabel} / estimare ${estimate}`;
+  const phone = "—";
+  const message = `Bună! Sunt interesat de o renovare.
+
+Tip proiect: ${projectType}
+
+Telefon: ${phone}`;
+
+  openWhatsApp(message);
 }
 
 // ============ Data ============
@@ -559,14 +556,13 @@ function Page() {
                     Continuă <ArrowRight className="h-4 w-4" />
                   </button>
                 ) : (
-                  <a
-                    href={buildWhatsAppEstimateUrl({ space, sqm, tier, price })}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-7 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
                   >
                     Solicită oferta personalizată <ArrowRight className="h-4 w-4" />
-                  </a>
+                  </button>
                 )}
               </div>
             </div>
@@ -679,14 +675,13 @@ function EstimateCard({
         final se stabilește după vizita la locație.
       </p>
 
-      <a
-        href={buildWhatsAppEstimateUrl({ space, sqm, tier, price })}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-6 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
       >
         Solicită oferta personalizată
-      </a>
+      </button>
     </div>
   );
 }
