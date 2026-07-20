@@ -346,5 +346,25 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+  },
+  {
+    slug: "casa-renovata",
+    title: "Casă renovată",
+    category: "Renovare interioară casă",
+    location: "Satu Mare",
+    cover: CASA_RENOVATA[1].url,
+    gallery: CASA_RENOVATA.map((c) => c.url),
+    galleryAlts: CASA_RENOVATA_ALTS,
+    before: CASA_RENOVATA[0].url,
+    after: CASA_RENOVATA[1].url,
+    badge: "Proiect finalizat",
+    description:
+      "Renovare interioară completă a unei case cu finisaje premium — pereți în travertin decorativ, ancadramente clasice din rigips, tavane circulare, șemineu electric integrat, casa scării cu balustradă din alamă și fier forjat, corpuri de iluminat suspendate și pardoseală lucioasă din gresie porțelanată.",
+    services: ["Finisaje travertin decorativ", "Ancadramente și tavane rigips", "Șemineu integrat", "Balustradă alamă și fier forjat", "Iluminat decorativ"],
+    chips: ["Renovare completă", "Finisaje premium", "Travertin decorativ", "Casa scării", "Design clasic-modern"],
+  },
+];
+
 export const projectBySlug = (slug: string) =>
   PROJECTS.find((p) => p.slug === slug);
+
