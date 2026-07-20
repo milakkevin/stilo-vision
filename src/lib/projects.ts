@@ -80,7 +80,7 @@ const CLINICA_ALTS = [
   "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
 ];
 
-const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er43, er05, er06] as unknown as { url: string }[];
+const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06] as unknown as { url: string }[];
 const EXTERIOR_RENOVAT_ALTS = [
   "Fațadă veche înainte de renovare, cu structură provizorie din lemn",
   "Casa în etapa inițială de extindere și consolidare exterioară",
