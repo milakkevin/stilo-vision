@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { SITE, whatsappUrl } from "@/lib/site";
+import { SITE, openWhatsApp } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -39,9 +39,9 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-background">
+              <button type="button" onClick={() => openWhatsApp()} className="hover:text-background">
                 WhatsApp
-              </a>
+              </button>
             </li>
             <li>
               <a href={`mailto:${SITE.email}`} className="hover:text-background break-all">

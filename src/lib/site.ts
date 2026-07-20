@@ -15,5 +15,18 @@ export const SITE = {
   mapsLink: "https://www.google.com/maps/search/?api=1&query=Stilo+Renovation+SRL+Satu+Mare",
 };
 
-export const whatsappUrl = () =>
-  `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(SITE.whatsappMsg)}`;
+export const WHATSAPP_NUMBER = "40742914164";
+
+export const whatsappUrl = (message = SITE.whatsappMsg) => {
+  const whatsappUrl =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  return whatsappUrl;
+};
+
+export const openWhatsApp = (message = SITE.whatsappMsg) => {
+  const whatsappUrl =
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+};

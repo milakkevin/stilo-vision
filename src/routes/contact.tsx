@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { Reveal } from "@/components/Reveal";
-import { SITE, whatsappUrl } from "@/lib/site";
+import { SITE, openWhatsApp } from "@/lib/site";
 import hero from "@/assets/project-6.jpg";
 
 export const Route = createFileRoute("/contact")({
@@ -51,13 +51,13 @@ function Page() {
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">{SITE.phone}</div>
               </div>
             </a>
-            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+            <button type="button" onClick={() => openWhatsApp()} className="flex items-start gap-4 group text-left">
               <MessageCircle className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
               <div>
                 <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</div>
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">Scrieți-ne pe WhatsApp</div>
               </div>
-            </a>
+            </button>
             <a href={`mailto:${SITE.email}`} className="flex items-start gap-4 group">
               <Mail className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
               <div>
@@ -150,9 +150,16 @@ function ContactForm() {
     setSent(true);
   };
 
-  const whatsappHref = () => {
-    const text = `Bună! Sunt ${form.nume || "[nume]"}. Tip proiect: ${form.tip}. Telefon: ${form.telefon || "[telefon]"}. ${form.mesaj}`;
-    return `https://wa.me/40742914164?text=${encodeURIComponent(text)}`;
+  const openWhatsAppContact = () => {
+    const projectType = form.tip;
+    const phone = form.telefon || "—";
+    const message = `Bună! Sunt interesat de o renovare.
+
+Tip proiect: ${projectType}
+
+Telefon: ${phone}`;
+
+    openWhatsApp(message);
   };
 
   return (
@@ -235,14 +242,13 @@ function ContactForm() {
         >
           Trimite pe email
         </button>
-        <a
-          href={whatsappHref()}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={openWhatsAppContact}
           className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-center text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
         >
           Trimite pe WhatsApp
-        </a>
+        </button>
       </div>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.
