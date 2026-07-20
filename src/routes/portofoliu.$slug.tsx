@@ -82,7 +82,7 @@ function Page() {
   const [lbIndex, setLbIndex] = useState<number | null>(null);
   const lbImages = p.gallery.map((src, i) => ({
     src,
-    alt: `${p.title} — imagine ${i + 1}`,
+    alt: p.galleryAlts?.[i] ?? `${p.title} — imagine ${i + 1}`,
   }));
 
   return (
@@ -189,7 +189,7 @@ function Page() {
             >
               <img
                 src={g}
-                alt={`${p.title} — imagine ${i + 1}`}
+                alt={p.galleryAlts?.[i] ?? `${p.title} — imagine ${i + 1}`}
                 loading="lazy"
                 decoding="async"
                 className="h-full w-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.06]"

@@ -17,7 +17,25 @@ import goia08 from "@/assets/goia/goia-08.jpg.asset.json";
 import goia09 from "@/assets/goia/goia-09.jpg.asset.json";
 import goia10 from "@/assets/goia/goia-10.jpg.asset.json";
 
+import ap01 from "@/assets/apartament/apartament-01.png.asset.json";
+import ap02 from "@/assets/apartament/apartament-02.png.asset.json";
+import ap03 from "@/assets/apartament/apartament-03.png.asset.json";
+import ap04 from "@/assets/apartament/apartament-04.png.asset.json";
+import ap05 from "@/assets/apartament/apartament-05.png.asset.json";
+import ap06 from "@/assets/apartament/apartament-06.png.asset.json";
+import ap07 from "@/assets/apartament/apartament-07.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
+const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
+const APARTAMENT_ALTS = [
+  "Living modern premium renovat de Stilo Renovation",
+  "Living cu perete TV și finisaje premium",
+  "Bucătărie modernă cu insulă",
+  "Dormitor matrimonial modern",
+  "Baie premium cu marmură albă",
+  "Baie premium cu marmură neagră",
+  "Birou modern amenajat de Stilo Renovation",
+];
 
 export type Project = {
   slug: string;
@@ -33,6 +51,7 @@ export type Project = {
   badge?: string;
   client?: string;
   chips?: string[];
+  galleryAlts?: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -80,16 +99,19 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "dormitor-premium",
-    title: "Dormitor premium",
-    category: "Amenajare interioară",
-    location: "Carei",
-    cover: p2,
-    gallery: [p2, p1, p3],
+    title: "Apartament",
+    category: "Renovare completă apartament",
+    location: "Satu Mare",
+    cover: APARTAMENT[0].url,
+    gallery: APARTAMENT.map((a) => a.url),
+    galleryAlts: APARTAMENT_ALTS,
     before: before1,
-    after: p2,
+    after: APARTAMENT[0].url,
+    badge: "Proiect finalizat",
     description:
-      "Dormitor matrimonial cu tavan decorativ și iluminat perimetral cald, textile bogate, dressing la comandă și o paletă cromatică echilibrată — sofisticată și liniștită.",
-    services: ["Rigips", "Plafoane decorative", "Parchet", "Zugrăveli"],
+      "Amenajare premium realizată de Stilo Renovation, cu finisaje moderne, mobilier la comandă, iluminat LED ambiental, bucătărie minimalistă, băi elegante și spații optimizate pentru confort și funcționalitate.",
+    services: ["Finisaje moderne", "Mobilier la comandă", "Iluminat LED ambiental", "Băi și bucătărie"],
+    chips: ["Renovare completă", "Finisaje premium", "Mobilier la comandă", "Iluminat LED", "Design modern"],
   },
   {
     slug: "scara-si-semineu",
