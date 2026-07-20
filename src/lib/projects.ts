@@ -286,8 +286,9 @@ export const PROJECTS: Project[] = [
     after: EXTERIOR_RENOVAT[5].url,
     badge: "Proiect finalizat",
     description:
-      "Renovare completă a unei fațade: termoizolație, finisaje decorative, tâmplărie nouă și iluminat arhitectural care evidențiază volumele casei la lăsarea serii.",
-    services: ["Renovări case", "Finisaje premium", "Iluminat", "Instalații"],
+      "Evoluția completă a renovării exterioare, de la structura veche și extinderea din lemn, până la ridicarea noii forme a casei, placarea exterioară și pregătirea pentru finisajele finale. Proiectul evidențiază etapele reale de transformare și execuția atentă a fiecărui detaliu structural și estetic.",
+    services: ["Extindere și consolidare", "Structură din lemn", "Placare exterioară", "Termoizolație", "Finisaje fațadă"],
+    chips: ["Evoluție proiect", "Renovare exterior", "Extindere casă", "Termoizolație", "Proiect rezidențial"],
   },
 ];
 
