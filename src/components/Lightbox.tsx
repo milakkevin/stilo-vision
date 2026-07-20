@@ -120,8 +120,9 @@ export function Lightbox({
           key={current.src}
           src={current.src}
           alt={current.alt}
-          className="max-h-[90svh] max-w-[92vw] object-contain shadow-2xl animate-fade-in-slow"
+          className="max-h-[90svh] max-w-[92vw] rounded-xl object-contain shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/10 animate-fade-in-slow"
         />
+
         <figcaption className="absolute bottom-[-2.25rem] left-0 right-0 text-center text-xs uppercase tracking-[0.28em] text-white/70">
           {index + 1} / {images.length}
         </figcaption>
