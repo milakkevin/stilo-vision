@@ -41,6 +41,15 @@ import sc05 from "@/assets/spatiu-comercial/spatiu-comercial-05.png.asset.json";
 import sc06 from "@/assets/spatiu-comercial/spatiu-comercial-06.png.asset.json";
 import sc07 from "@/assets/spatiu-comercial/spatiu-comercial-07.jpg.asset.json";
 
+import br01 from "@/assets/baie-renovata/baie-01.png.asset.json";
+import br02 from "@/assets/baie-renovata/baie-02.png.asset.json";
+import br03 from "@/assets/baie-renovata/baie-03.png.asset.json";
+import br04 from "@/assets/baie-renovata/baie-04.png.asset.json";
+import br05 from "@/assets/baie-renovata/baie-05.png.asset.json";
+import br06 from "@/assets/baie-renovata/baie-06.png.asset.json";
+import brBefore from "@/assets/baie-renovata/baie-before.png.asset.json";
+import brAfter from "@/assets/baie-renovata/baie-after.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
