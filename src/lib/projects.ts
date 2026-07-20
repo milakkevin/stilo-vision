@@ -82,6 +82,18 @@ const SPATIU_COMERCIAL_ALTS = [
   "Zonă de servire cu banchetă din piele și iluminat ambiental",
 ];
 
+const BAIE_RENOVATA: { url: string }[] = [br01, br02, br03, br04, br05, br06] as unknown as { url: string }[];
+const BAIE_RENOVATA_ALTS = [
+  "Baie înainte de renovare — cadă veche și faianță deteriorată",
+  "Baie veche cu cadă din tablă emailată și faianță albă",
+  "Baie renovată premium cu marmură și mobilier la comandă",
+  "Cabină de duș walk-in cu marmură și sticlă securizată",
+  "Baie modernă cu finisaje albe și accente aurii",
+  "Baie contemporană cu duș walk-in și pardoseală imitație piatră",
+];
+const BAIE_BEFORE = (brBefore as unknown as { url: string }).url;
+const BAIE_AFTER = (brAfter as unknown as { url: string }).url;
+
 export type Project = {
   slug: string;
   title: string;
