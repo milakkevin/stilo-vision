@@ -28,7 +28,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const featured = PROJECTS.slice(0, 4);
+  const featuredSlugs = [
+    "renovare-casa-completa",
+    "amenajare-restaurant",
+    "dormitor-premium",
+    "apartament-modern",
+  ];
+  const featured = featuredSlugs
+    .map((slug) => PROJECTS.find((p) => p.slug === slug))
+    .filter(Boolean) as typeof PROJECTS;
   const featuredServices = SERVICES.slice(0, 8);
   return (
     <>
