@@ -344,9 +344,7 @@ export const PROJECTS: Project[] = [
     services: ["Extindere și consolidare", "Structură din lemn", "Placare exterioară", "Termoizolație", "Finisaje fațadă"],
     chips: ["Evoluție proiect", "Renovare exterior", "Extindere casă", "Termoizolație", "Proiect rezidențial"],
   },
-];
 
-  },
   {
     slug: "casa-renovata",
     title: "Casă renovată",
