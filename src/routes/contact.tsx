@@ -132,15 +132,30 @@ function ContactForm() {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation
     if (!form.nume.trim() || !form.telefon.trim()) return;
-    // Fallback: open WhatsApp with prefilled message
-    const text = `Bună! Sunt ${form.nume}. Tip proiect: ${form.tip}. Telefon: ${form.telefon}. Email: ${form.email}. ${form.mesaj}`;
+
+    const subject = `Cerere consultație — ${form.tip} (${form.nume})`;
+    const body = [
+      `Nume: ${form.nume}`,
+      `Telefon: ${form.telefon}`,
+      `Email: ${form.email || "—"}`,
+      `Tip proiect: ${form.tip}`,
+      "",
+      "Mesaj:",
+      form.mesaj || "—",
+    ].join("\n");
+
+    // Trimite email către Stilo Renovation
+    window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+  };
+
+  const openWhatsApp = () => {
+    const text = `Bună! Sunt ${form.nume || "[nume]"}. Tip proiect: ${form.tip}. Telefon: ${form.telefon || "[telefon]"}. ${form.mesaj}`;
     window.open(
       `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(text)}`,
       "_blank",
     );
-    setSent(true);
   };
 
   return (
