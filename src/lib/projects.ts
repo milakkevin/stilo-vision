@@ -33,6 +33,13 @@ import am05 from "@/assets/apartament-modern/apartament-modern-05.png.asset.json
 import am06 from "@/assets/apartament-modern/apartament-modern-06.png.asset.json";
 import am07 from "@/assets/apartament-modern/apartament-modern-07.png.asset.json";
 
+import sc01 from "@/assets/spatiu-comercial/spatiu-comercial-01.png.asset.json";
+import sc02 from "@/assets/spatiu-comercial/spatiu-comercial-02.png.asset.json";
+import sc03 from "@/assets/spatiu-comercial/spatiu-comercial-03.png.asset.json";
+import sc04 from "@/assets/spatiu-comercial/spatiu-comercial-04.png.asset.json";
+import sc05 from "@/assets/spatiu-comercial/spatiu-comercial-05.png.asset.json";
+import sc06 from "@/assets/spatiu-comercial/spatiu-comercial-06.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
@@ -53,6 +60,15 @@ const APARTAMENT_MODERN_ALTS = [
   "Living luminos cu ferestre panoramice",
   "Baie modernă cu cadă freestanding",
   "Baie contemporană cu oglindă iluminată LED",
+];
+const SPATIU_COMERCIAL: { url: string }[] = [sc01, sc02, sc03, sc04, sc05, sc06] as unknown as { url: string }[];
+const SPATIU_COMERCIAL_ALTS = [
+  "Spațiu comercial renovat de Stilo Renovation",
+  "Amenajare interioară spațiu comercial modern",
+  "Finisaje premium pentru spații comerciale",
+  "Design interior comercial modern",
+  "Zonă de recepție și prezentare produse",
+  "Iluminat modern pentru spațiu comercial",
 ];
 
 export type Project = {
