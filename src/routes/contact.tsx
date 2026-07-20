@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { Reveal } from "@/components/Reveal";
 import { SITE, whatsappUrl } from "@/lib/site";
