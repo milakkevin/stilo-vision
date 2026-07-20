@@ -41,6 +41,15 @@ import sc05 from "@/assets/spatiu-comercial/spatiu-comercial-05.png.asset.json";
 import sc06 from "@/assets/spatiu-comercial/spatiu-comercial-06.png.asset.json";
 import sc07 from "@/assets/spatiu-comercial/spatiu-comercial-07.jpg.asset.json";
 
+import br01 from "@/assets/baie-renovata/baie-01.png.asset.json";
+import br02 from "@/assets/baie-renovata/baie-02.png.asset.json";
+import br03 from "@/assets/baie-renovata/baie-03.png.asset.json";
+import br04 from "@/assets/baie-renovata/baie-04.png.asset.json";
+import br05 from "@/assets/baie-renovata/baie-05.png.asset.json";
+import br06 from "@/assets/baie-renovata/baie-06.png.asset.json";
+import brBefore from "@/assets/baie-renovata/baie-before.png.asset.json";
+import brAfter from "@/assets/baie-renovata/baie-after.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
@@ -72,6 +81,18 @@ const SPATIU_COMERCIAL_ALTS = [
   "Iluminat modern pentru spațiu comercial",
   "Zonă de servire cu banchetă din piele și iluminat ambiental",
 ];
+
+const BAIE_RENOVATA: { url: string }[] = [br01, br02, br03, br04, br05, br06] as unknown as { url: string }[];
+const BAIE_RENOVATA_ALTS = [
+  "Baie înainte de renovare — cadă veche și faianță deteriorată",
+  "Baie veche cu cadă din tablă emailată și faianță albă",
+  "Baie renovată premium cu marmură și mobilier la comandă",
+  "Cabină de duș walk-in cu marmură și sticlă securizată",
+  "Baie modernă cu finisaje albe și accente aurii",
+  "Baie contemporană cu duș walk-in și pardoseală imitație piatră",
+];
+const BAIE_BEFORE = (brBefore as unknown as { url: string }).url;
+const BAIE_AFTER = (brAfter as unknown as { url: string }).url;
 
 export type Project = {
   slug: string;
@@ -193,6 +214,22 @@ export const PROJECTS: Project[] = [
       "Renovare completă și amenajare modernă pentru un spațiu comercial realizată de Stilo Renovation. Proiectul include finisaje premium, instalații electrice și sanitare noi, pardoseli profesionale, iluminat modern, mobilier personalizat și un design optimizat pentru funcționalitate și experiența clienților.",
     services: ["Finisaje premium", "Instalații noi", "Pardoseli profesionale", "Iluminat modern", "Mobilier personalizat"],
     chips: ["Renovare la cheie", "Finisaje premium", "Iluminat modern", "Mobilier personalizat", "Design comercial"],
+  },
+  {
+    slug: "baie-renovata",
+    title: "Baie Renovată",
+    category: "Renovare completă baie",
+    location: "Satu Mare",
+    cover: BAIE_RENOVATA[2].url,
+    gallery: BAIE_RENOVATA.map((b) => b.url),
+    galleryAlts: BAIE_RENOVATA_ALTS,
+    before: BAIE_BEFORE,
+    after: BAIE_AFTER,
+    badge: "Proiect finalizat",
+    description:
+      "Transformare completă a unei băi vechi într-un spațiu modern și elegant. Am înlocuit integral instalațiile sanitare, faianța și gresia, am montat mobilier la comandă, marmură pe pereți, duș walk-in cu sticlă securizată, iluminat LED ambiental și accesorii premium — pentru un rezultat curat, funcțional și de durată.",
+    services: ["Demolare și reconstrucție", "Instalații sanitare noi", "Faianță și gresie premium", "Mobilier la comandă", "Duș walk-in"],
+    chips: ["Renovare completă", "Marmură", "Duș walk-in", "Iluminat LED", "Mobilier la comandă"],
   },
   {
     slug: "exterior-renovat",
