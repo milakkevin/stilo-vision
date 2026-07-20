@@ -17,7 +17,25 @@ import goia08 from "@/assets/goia/goia-08.jpg.asset.json";
 import goia09 from "@/assets/goia/goia-09.jpg.asset.json";
 import goia10 from "@/assets/goia/goia-10.jpg.asset.json";
 
+import ap01 from "@/assets/apartament/apartament-01.png.asset.json";
+import ap02 from "@/assets/apartament/apartament-02.png.asset.json";
+import ap03 from "@/assets/apartament/apartament-03.png.asset.json";
+import ap04 from "@/assets/apartament/apartament-04.png.asset.json";
+import ap05 from "@/assets/apartament/apartament-05.png.asset.json";
+import ap06 from "@/assets/apartament/apartament-06.png.asset.json";
+import ap07 from "@/assets/apartament/apartament-07.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
+const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
+const APARTAMENT_ALTS = [
+  "Living modern premium renovat de Stilo Renovation",
+  "Living cu perete TV și finisaje premium",
+  "Bucătărie modernă cu insulă",
+  "Dormitor matrimonial modern",
+  "Baie premium cu marmură albă",
+  "Baie premium cu marmură neagră",
+  "Birou modern amenajat de Stilo Renovation",
+];
 
 export type Project = {
   slug: string;
