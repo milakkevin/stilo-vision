@@ -132,6 +132,22 @@ export const PROJECTS: Project[] = [
     chips: ["Renovare completă", "Finisaje premium", "Mobilier la comandă", "Iluminat LED", "Design modern"],
   },
   {
+    slug: "apartament-modern",
+    title: "Apartament Modern",
+    category: "Renovare completă apartament",
+    location: "Satu Mare",
+    cover: APARTAMENT_MODERN[0].url,
+    gallery: APARTAMENT_MODERN.map((a) => a.url),
+    galleryAlts: APARTAMENT_MODERN_ALTS,
+    before: before1,
+    after: APARTAMENT_MODERN[0].url,
+    badge: "Proiect finalizat",
+    description:
+      "Proiect complet de renovare și amenajare interioară realizat de Stilo Renovation. Apartamentul beneficiază de un design modern, spații open-space, finisaje premium, bucătărie la comandă, băi elegante și un ambient luminos, creat pentru confort și funcționalitate.",
+    services: ["Finisaje premium", "Bucătărie la comandă", "Băi moderne", "Amenajări open-space"],
+    chips: ["Renovare completă", "Open-space", "Finisaje premium", "Bucătărie la comandă", "Design modern"],
+  },
+  {
     slug: "scara-si-semineu",
     title: "Scară și șemineu",
     category: "Amenajare interioară",
