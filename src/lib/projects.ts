@@ -25,6 +25,14 @@ import ap05 from "@/assets/apartament/apartament-05.png.asset.json";
 import ap06 from "@/assets/apartament/apartament-06.png.asset.json";
 import ap07 from "@/assets/apartament/apartament-07.png.asset.json";
 
+import am01 from "@/assets/apartament-modern/apartament-modern-01.png.asset.json";
+import am02 from "@/assets/apartament-modern/apartament-modern-02.png.asset.json";
+import am03 from "@/assets/apartament-modern/apartament-modern-03.png.asset.json";
+import am04 from "@/assets/apartament-modern/apartament-modern-04.png.asset.json";
+import am05 from "@/assets/apartament-modern/apartament-modern-05.png.asset.json";
+import am06 from "@/assets/apartament-modern/apartament-modern-06.png.asset.json";
+import am07 from "@/assets/apartament-modern/apartament-modern-07.png.asset.json";
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
@@ -35,6 +43,16 @@ const APARTAMENT_ALTS = [
   "Baie premium cu marmură albă",
   "Baie premium cu marmură neagră",
   "Birou modern amenajat de Stilo Renovation",
+];
+const APARTAMENT_MODERN: { url: string }[] = [am01, am02, am03, am04, am05, am06, am07] as unknown as { url: string }[];
+const APARTAMENT_MODERN_ALTS = [
+  "Bucătărie modernă realizată de Stilo Renovation",
+  "Hol modern cu finisaje premium",
+  "Living open-space cu bucătărie modernă",
+  "Zonă de dining și living contemporan",
+  "Living luminos cu ferestre panoramice",
+  "Baie modernă cu cadă freestanding",
+  "Baie contemporană cu oglindă iluminată LED",
 ];
 
 export type Project = {
@@ -112,6 +130,22 @@ export const PROJECTS: Project[] = [
       "Amenajare premium realizată de Stilo Renovation, cu finisaje moderne, mobilier la comandă, iluminat LED ambiental, bucătărie minimalistă, băi elegante și spații optimizate pentru confort și funcționalitate.",
     services: ["Finisaje moderne", "Mobilier la comandă", "Iluminat LED ambiental", "Băi și bucătărie"],
     chips: ["Renovare completă", "Finisaje premium", "Mobilier la comandă", "Iluminat LED", "Design modern"],
+  },
+  {
+    slug: "apartament-modern",
+    title: "Apartament Modern",
+    category: "Renovare completă apartament",
+    location: "Satu Mare",
+    cover: APARTAMENT_MODERN[0].url,
+    gallery: APARTAMENT_MODERN.map((a) => a.url),
+    galleryAlts: APARTAMENT_MODERN_ALTS,
+    before: before1,
+    after: APARTAMENT_MODERN[0].url,
+    badge: "Proiect finalizat",
+    description:
+      "Proiect complet de renovare și amenajare interioară realizat de Stilo Renovation. Apartamentul beneficiază de un design modern, spații open-space, finisaje premium, bucătărie la comandă, băi elegante și un ambient luminos, creat pentru confort și funcționalitate.",
+    services: ["Finisaje premium", "Bucătărie la comandă", "Băi moderne", "Amenajări open-space"],
+    chips: ["Renovare completă", "Open-space", "Finisaje premium", "Bucătărie la comandă", "Design modern"],
   },
   {
     slug: "scara-si-semineu",
