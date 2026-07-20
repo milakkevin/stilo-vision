@@ -87,7 +87,7 @@ const CLINICA_ALTS = [
   "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
 ];
 
-const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06] as unknown as { url: string }[];
+const EXTERIOR_RENOVAT: { url: string }[] = [er02, er01, er03, er04, er05, er06, er07, er08, er09, er10, er11, er12, er13] as unknown as { url: string }[];
 const EXTERIOR_RENOVAT_ALTS = [
   "Fațadă veche înainte de renovare, cu structură provizorie din lemn",
   "Casa în etapa inițială de extindere și consolidare exterioară",
@@ -95,6 +95,13 @@ const EXTERIOR_RENOVAT_ALTS = [
   "Ridicarea frontonului și a structurii superioare din lemn",
   "Placare și termoizolație exterioară în curs de execuție",
   "Fațadă aproape finalizată, pregătită pentru finisajele finale",
+  "Lucrări nocturne la terasă cu structură nouă din lemn și pavaj montat",
+  "Fațada finalizată cu tencuială albă, acoperiș nou și terasă acoperită",
+  "Vedere laterală a casei renovate cu stâlpi din lemn și jgheaburi noi",
+  "Casa finalizată exterior — fațadă curată, ferestre noi și acoperiș din țiglă metalică",
+  "Scară interioară din lemn masiv, gata pentru finisaje",
+  "Interior amenajat la parter cu pereți finisați și grinzi aparente",
+  "Mansardă spațioasă cu tavan înalt, ferestre noi și structură din lemn",
 ];
 
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
