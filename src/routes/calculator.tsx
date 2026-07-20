@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   Building2,
@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { ConsultCTA } from "@/components/ConsultCTA";
-import { SITE } from "@/lib/site";
+
 import hero from "@/assets/project-2.jpg";
 
 export const Route = createFileRoute("/calculator")({
@@ -49,6 +49,39 @@ export const Route = createFileRoute("/calculator")({
   }),
   component: Page,
 });
+
+// ============ WhatsApp ============
+const WHATSAPP_NUMBER = "40742914164";
+
+function openWhatsAppEstimate({
+  space,
+  sqm,
+  tier,
+  price,
+}: {
+  space: SpaceType | null;
+  sqm: number;
+  tier: Tier | null;
+  price: { mid: number; low: number; high: number; size: number } | null;
+}) {
+  const spaceLabel = SPACES.find((s) => s.id === space)?.label ?? "—";
+  const tierLabel = TIERS.find((t) => t.id === tier)?.label ?? "—";
+  const estimate = price
+    ? `${price.low.toLocaleString("ro-RO")}–${price.high.toLocaleString("ro-RO")} €`
+    : "—";
+  const message = [
+    "Bună! Am folosit configuratorul:",
+    "",
+    `Tip proiect: ${spaceLabel}`,
+    `Suprafață: ${sqm} m²`,
+    `Pachet: ${tierLabel}`,
+    `Estimare: ${estimate}`,
+    "",
+    "Aș dori o ofertă personalizată.",
+  ].join("\n");
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank", "noopener,noreferrer");
+}
 
 // ============ Data ============
 type SpaceType = "apartament" | "casa" | "comercial";
@@ -527,12 +560,13 @@ function Page() {
                     Continuă <ArrowRight className="h-4 w-4" />
                   </button>
                 ) : (
-                  <Link
-                    to="/contact"
+                  <button
+                    type="button"
+                    onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-7 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
                   >
                     Solicită oferta personalizată <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </button>
                 )}
               </div>
             </div>
@@ -645,18 +679,13 @@ function EstimateCard({
         final se stabilește după vizita la locație.
       </p>
 
-      <a
-        href={`https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(
-          `Bună! Am folosit configuratorul: ${spaceLabel}, ${sqm} m², ${tierLabel}. Estimare: ${
-            price ? `${price.low}–${price.high} €` : "—"
-          }. Aș vrea o ofertă personalizată.`,
-        )}`}
-        target="_blank"
-        rel="noreferrer"
+      <button
+        type="button"
+        onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-6 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
       >
         Solicită oferta personalizată
-      </a>
+      </button>
     </div>
   );
 }
