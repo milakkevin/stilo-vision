@@ -82,7 +82,7 @@ function Page() {
   const [lbIndex, setLbIndex] = useState<number | null>(null);
   const lbImages = p.gallery.map((src, i) => ({
     src,
-    alt: `${p.title} — imagine ${i + 1}`,
+    alt: p.galleryAlts?.[i] ?? `${p.title} — imagine ${i + 1}`,
   }));
 
   return (
