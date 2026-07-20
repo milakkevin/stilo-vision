@@ -50,6 +50,29 @@ import br06 from "@/assets/baie-renovata/baie-06.png.asset.json";
 import brBefore from "@/assets/baie-renovata/baie-before.png.asset.json";
 import brAfter from "@/assets/baie-renovata/baie-after.png.asset.json";
 
+import cd01 from "@/assets/clinica-dentara/clinica-01.png.asset.json";
+import cd02 from "@/assets/clinica-dentara/clinica-02.png.asset.json";
+import cd03 from "@/assets/clinica-dentara/clinica-03.png.asset.json";
+import cd04 from "@/assets/clinica-dentara/clinica-04.png.asset.json";
+import cd05 from "@/assets/clinica-dentara/clinica-05.png.asset.json";
+import cd06 from "@/assets/clinica-dentara/clinica-06.png.asset.json";
+import cd07 from "@/assets/clinica-dentara/clinica-07.png.asset.json";
+import cd08 from "@/assets/clinica-dentara/clinica-08.png.asset.json";
+import cd09 from "@/assets/clinica-dentara/clinica-09.png.asset.json";
+
+const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
+const CLINICA_ALTS = [
+  "Structură tavan circular din rigips — etapa de construcție",
+  "Cameră pregătită cu tavan curbat și ferestre protejate",
+  "Perete cu nișe decorative rotunjite din rigips",
+  "Zonă interioară cu tavan circular și pereți curbați finisați",
+  "Tavan circular pregătit pentru iluminat LED ambiental",
+  "Test iluminat LED ambiental cald în tavanul circular",
+  "Cabinet stomatologic finalizat cu iluminat decorativ și placări din lemn",
+  "Cabinet dentar modern cu mobilier la comandă și lustră decorativă",
+  "Cabinet stomatologic finalizat — vedere de ansamblu cu iluminat ambiental",
+];
+
 const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
@@ -130,16 +153,19 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "amenajare-restaurant",
-    title: "Amenajare restaurant",
-    category: "Spațiu comercial",
+    title: "Clinică dentară",
+    category: "Amenajare spațiu medical",
     location: "Satu Mare",
-    cover: p4,
-    gallery: [p4, p6, p1],
-    before: before1,
-    after: p4,
+    cover: CLINICA[8].url,
+    gallery: CLINICA.map((c) => c.url),
+    galleryAlts: CLINICA_ALTS,
+    before: CLINICA[0].url,
+    after: CLINICA[8].url,
+    badge: "Proiect finalizat",
     description:
-      "Amenajarea unui restaurant boutique, cu lambriuri din lemn masiv, marmură, iluminat cald și detalii aurii — o atmosferă intimă, potrivită pentru experiențe culinare de nivel înalt.",
-    services: ["Amenajări interioare", "Finisaje premium", "Rigips", "Iluminat"],
+      "Amenajare completă a unei clinici dentare, urmărind evoluția pas cu pas — de la structura din rigips cu tavan circular și pereți curbați, la finisajele fine, testarea iluminatului LED ambiental și rezultatul final: un cabinet modern cu placări din lemn, mobilier la comandă și o atmosferă caldă, profesională.",
+    services: ["Rigips și forme curbate", "Finisaje premium", "Iluminat LED ambiental", "Mobilier la comandă"],
+    chips: ["Amenajare medicală", "Tavan circular", "Iluminat LED", "Finisaje premium", "Proiect la cheie"],
   },
   {
     slug: "living-modern",
