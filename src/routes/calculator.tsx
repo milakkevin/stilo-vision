@@ -53,7 +53,7 @@ export const Route = createFileRoute("/calculator")({
 // ============ WhatsApp ============
 const WHATSAPP_NUMBER = "40742914164";
 
-function openWhatsAppEstimate({
+function buildWhatsAppEstimateUrl({
   space,
   sqm,
   tier,
@@ -79,8 +79,7 @@ function openWhatsAppEstimate({
     "",
     "Aș dori o ofertă personalizată.",
   ].join("\n");
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 // ============ Data ============
