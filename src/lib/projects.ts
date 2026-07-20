@@ -51,6 +51,7 @@ export type Project = {
   badge?: string;
   client?: string;
   chips?: string[];
+  galleryAlts?: string[];
 };
 
 export const PROJECTS: Project[] = [
