@@ -6,6 +6,24 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 import before1 from "@/assets/before-1.jpg";
 
+import sp53 from "@/assets/spatiu-nou/sp-53.jpg.asset.json";
+import sp54 from "@/assets/spatiu-nou/sp-54.jpg.asset.json";
+import sp55 from "@/assets/spatiu-nou/sp-55.jpg.asset.json";
+import sp56 from "@/assets/spatiu-nou/sp-56.jpg.asset.json";
+import sp57 from "@/assets/spatiu-nou/sp-57.jpg.asset.json";
+import sp58 from "@/assets/spatiu-nou/sp-58.jpg.asset.json";
+import sp59 from "@/assets/spatiu-nou/sp-59.jpg.asset.json";
+const SPATIU_NOU: { url: string }[] = [sp56, sp58, sp55, sp59, sp57, sp54, sp53] as unknown as { url: string }[];
+const SPATIU_NOU_ALTS = [
+  "Spațiu comercial în etapa de demolare — moloz și structuri vechi de rigips",
+  "Structură nouă din rigips ridicată sub tavanul din beton aparent",
+  "Montaj gresie decorativă tip covor și pardoseală din lemn în zona centrală",
+  "Pereți finisați cu panouri decorative și arcade pregătite pentru vopsire",
+  "Detaliu ancadrament decorativ și arcadă interioară finisată",
+  "Zonă de servire finalizată cu iluminat LED albastru și mese noi",
+  "Salon principal cu fotolii Chesterfield, arcadă din cărămidă și iluminat ambiental",
+];
+
 import goia01 from "@/assets/goia/goia-01.jpg.asset.json";
 import goia02 from "@/assets/goia/goia-02.jpg.asset.json";
 import goia03 from "@/assets/goia/goia-03.jpg.asset.json";
