@@ -231,18 +231,27 @@ function ContactForm() {
         </Field>
       </div>
 
-      <button
-        type="submit"
-        className="mt-8 w-full rounded-full bg-foreground px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-foreground/90 sm:px-8 sm:tracking-[0.28em] md:w-auto"
-      >
-        Trimite cererea
-      </button>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <button
+          type="submit"
+          className="w-full rounded-full bg-foreground px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-background transition hover:bg-foreground/90 sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        >
+          Trimite pe email
+        </button>
+        <button
+          type="button"
+          onClick={openWhatsApp}
+          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        >
+          Trimite pe WhatsApp
+        </button>
+      </div>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.
       </p>
       {sent && (
         <p className="mt-4 rounded-lg bg-gold/20 px-4 py-3 text-sm text-foreground">
-          Mulțumim! Am deschis WhatsApp cu detaliile — apăsați trimite pentru a finaliza.
+          Mulțumim! Am deschis aplicația de email cu detaliile completate — apăsați trimite pentru a finaliza. Vă răspundem cât mai curând.
         </p>
       )}
     </form>
