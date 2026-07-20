@@ -235,13 +235,14 @@ function ContactForm() {
         >
           Trimite pe email
         </button>
-        <button
-          type="button"
-          onClick={openWhatsApp}
-          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        <a
+          href={whatsappHref()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-center text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
         >
           Trimite pe WhatsApp
-        </button>
+        </a>
       </div>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.
