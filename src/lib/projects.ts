@@ -293,11 +293,11 @@ export const PROJECTS: Project[] = [
     title: "Exterior renovat",
     category: "Renovare exterior casă",
     location: "Satu Mare",
-    cover: EXTERIOR_RENOVAT[5].url,
+    cover: EXTERIOR_RENOVAT[9].url,
     gallery: EXTERIOR_RENOVAT.map((img) => img.url),
     galleryAlts: EXTERIOR_RENOVAT_ALTS,
     before: EXTERIOR_RENOVAT[0].url,
-    after: EXTERIOR_RENOVAT[5].url,
+    after: EXTERIOR_RENOVAT[9].url,
     badge: "Proiect finalizat",
     description:
       "Evoluția completă a renovării exterioare, de la structura veche și extinderea din lemn, până la ridicarea noii forme a casei, placarea exterioară și pregătirea pentru finisajele finale. Proiectul evidențiază etapele reale de transformare și execuția atentă a fiecărui detaliu structural și estetic.",
