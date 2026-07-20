@@ -92,6 +92,25 @@ import er11 from "@/assets/exterior-renovat/ext-new-50.jpg.asset.json";
 import er12 from "@/assets/exterior-renovat/ext-new-51.jpg.asset.json";
 import er13 from "@/assets/exterior-renovat/ext-new-52.jpg.asset.json";
 
+import cr60 from "@/assets/casa-renovata/casa-60.png.asset.json";
+import cr61 from "@/assets/casa-renovata/casa-61.png.asset.json";
+import cr62 from "@/assets/casa-renovata/casa-62.png.asset.json";
+import cr63 from "@/assets/casa-renovata/casa-63.png.asset.json";
+import cr64 from "@/assets/casa-renovata/casa-64.png.asset.json";
+import cr65 from "@/assets/casa-renovata/casa-65.png.asset.json";
+
+const CASA_RENOVATA: { url: string }[] = [cr60, cr61, cr62, cr63, cr64, cr65] as unknown as { url: string }[];
+const CASA_RENOVATA_ALTS = [
+  "Arcadă decorativă din rigips cu ancadrament clasic și perete travertin",
+  "Perete TV cu șemineu electric integrat și mobilier alb suspendat",
+  "Casa scării cu candelabru suspendat, balustradă din alamă și trepte din lemn",
+  "Vedere ascendentă pe casa scării cu finisaje travertin și balustradă modernă",
+  "Palier superior cu ferestre înalte și balustradă din alamă și fier forjat",
+  "Living cu tavan circular, lambriuri decorative și candelabru cromat modern",
+];
+
+
+
 const CLINICA: { url: string }[] = [cd01, cd02, cd03, cd04, cd05, cd06, cd07, cd08, cd09] as unknown as { url: string }[];
 const CLINICA_ALTS = [
   "Structură tavan circular din rigips — etapa de construcție",
