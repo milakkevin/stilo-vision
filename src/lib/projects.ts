@@ -216,6 +216,22 @@ export const PROJECTS: Project[] = [
     chips: ["Renovare la cheie", "Finisaje premium", "Iluminat modern", "Mobilier personalizat", "Design comercial"],
   },
   {
+    slug: "baie-renovata",
+    title: "Baie Renovată",
+    category: "Renovare completă baie",
+    location: "Satu Mare",
+    cover: BAIE_RENOVATA[2].url,
+    gallery: BAIE_RENOVATA.map((b) => b.url),
+    galleryAlts: BAIE_RENOVATA_ALTS,
+    before: BAIE_BEFORE,
+    after: BAIE_AFTER,
+    badge: "Proiect finalizat",
+    description:
+      "Transformare completă a unei băi vechi într-un spațiu modern și elegant. Am înlocuit integral instalațiile sanitare, faianța și gresia, am montat mobilier la comandă, marmură pe pereți, duș walk-in cu sticlă securizată, iluminat LED ambiental și accesorii premium — pentru un rezultat curat, funcțional și de durată.",
+    services: ["Demolare și reconstrucție", "Instalații sanitare noi", "Faianță și gresie premium", "Mobilier la comandă", "Duș walk-in"],
+    chips: ["Renovare completă", "Marmură", "Duș walk-in", "Iluminat LED", "Mobilier la comandă"],
+  },
+  {
     slug: "exterior-renovat",
     title: "Exterior renovat",
     category: "Renovare casă",
