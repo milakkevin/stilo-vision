@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "./despre-noi";
 import { ConsultCTA } from "@/components/ConsultCTA";
-import { SITE } from "@/lib/site";
+
 import hero from "@/assets/project-2.jpg";
 
 export const Route = createFileRoute("/calculator")({
