@@ -39,7 +39,7 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="hover:text-background">
+              <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-background">
                 WhatsApp
               </a>
             </li>
@@ -49,12 +49,12 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={SITE.mapsLink} target="_blank" rel="noreferrer" className="hover:text-background">
+              <a href={SITE.mapsLink} target="_blank" rel="noopener noreferrer" className="hover:text-background">
                 {SITE.city} și împrejurimi
               </a>
             </li>
             <li>
-              <a href={SITE.facebook} target="_blank" rel="noreferrer" className="hover:text-background">
+              <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-background">
                 Facebook
               </a>
             </li>

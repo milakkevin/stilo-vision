@@ -51,7 +51,7 @@ function Page() {
                 <div className="font-display text-2xl text-foreground group-hover:underline underline-offset-4">{SITE.phone}</div>
               </div>
             </a>
-            <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+            <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
               <MessageCircle className="mt-1 h-5 w-5 text-gold" strokeWidth={1.5} />
               <div>
                 <div className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">WhatsApp</div>
@@ -96,7 +96,7 @@ function Page() {
             <a
               href={SITE.mapsLink}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="rounded-full bg-foreground px-5 py-2.5 text-[11px] uppercase tracking-[0.22em] text-background"
             >
               Deschide în Google Maps
@@ -150,12 +150,9 @@ function ContactForm() {
     setSent(true);
   };
 
-  const openWhatsApp = () => {
+  const whatsappHref = () => {
     const text = `Bună! Sunt ${form.nume || "[nume]"}. Tip proiect: ${form.tip}. Telefon: ${form.telefon || "[telefon]"}. ${form.mesaj}`;
-    window.open(
-      `https://wa.me/${SITE.phoneIntl}?text=${encodeURIComponent(text)}`,
-      "_blank",
-    );
+    return `https://wa.me/40742914164?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -238,13 +235,14 @@ function ContactForm() {
         >
           Trimite pe email
         </button>
-        <button
-          type="button"
-          onClick={openWhatsApp}
-          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
+        <a
+          href={whatsappHref()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full rounded-full border border-foreground/20 bg-[#25D366] px-6 py-4 text-center text-[11px] uppercase tracking-[0.24em] text-white transition hover:bg-[#20c15c] sm:w-auto sm:px-8 sm:tracking-[0.28em]"
         >
           Trimite pe WhatsApp
-        </button>
+        </a>
       </div>
       <p className="mt-4 text-xs text-muted-foreground">
         Fără obligații. Discutăm proiectul dumneavoastră și vă oferim recomandări gratuite.

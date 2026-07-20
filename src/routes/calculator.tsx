@@ -53,7 +53,7 @@ export const Route = createFileRoute("/calculator")({
 // ============ WhatsApp ============
 const WHATSAPP_NUMBER = "40742914164";
 
-function openWhatsAppEstimate({
+function buildWhatsAppEstimateUrl({
   space,
   sqm,
   tier,
@@ -79,8 +79,7 @@ function openWhatsAppEstimate({
     "",
     "Aș dori o ofertă personalizată.",
   ].join("\n");
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 // ============ Data ============
@@ -560,13 +559,14 @@ function Page() {
                     Continuă <ArrowRight className="h-4 w-4" />
                   </button>
                 ) : (
-                  <button
-                    type="button"
-                    onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
+                  <a
+                    href={buildWhatsAppEstimateUrl({ space, sqm, tier, price })}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-7 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
                   >
                     Solicită oferta personalizată <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </a>
                 )}
               </div>
             </div>
@@ -679,13 +679,14 @@ function EstimateCard({
         final se stabilește după vizita la locație.
       </p>
 
-      <button
-        type="button"
-        onClick={() => openWhatsAppEstimate({ space, sqm, tier, price })}
+      <a
+        href={buildWhatsAppEstimateUrl({ space, sqm, tier, price })}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold to-gold/80 px-6 py-3.5 text-[11px] uppercase tracking-[0.26em] text-charcoal shadow-[0_15px_40px_-15px_rgba(201,168,76,0.8)] transition hover:brightness-105"
       >
         Solicită oferta personalizată
-      </button>
+      </a>
     </div>
   );
 }
