@@ -80,7 +80,7 @@ Telefon: ${phone}`;
 
 // ============ Data ============
 type SpaceType = "apartament" | "casa" | "comercial";
-type Tier = "cosmetic" | "standard" | "premium" | "lux";
+type Tier = "standard" | "premium" | "lux";
 type Timeline = "flexibil" | "3luni" | "urgent";
 
 const SPACES: {
@@ -103,15 +103,6 @@ const TIERS: {
   Icon: LucideIcon;
   includes: string[];
 }[] = [
-  {
-    id: "cosmetic",
-    label: "Refresh cosmetic",
-    range: "180 – 300 €/mp",
-    min: 180,
-    max: 300,
-    Icon: Paintbrush,
-    includes: ["Zugrăveli", "Reparații minore", "Înlocuire pardoseli", "Uși interior"],
-  },
   {
     id: "standard",
     label: "Renovare standard",
