@@ -4,7 +4,6 @@ import {
   Building2,
   Home,
   Store,
-  Paintbrush,
   Wrench,
   Sparkles,
   Gem,
