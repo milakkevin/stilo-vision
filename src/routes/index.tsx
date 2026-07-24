@@ -59,8 +59,7 @@ function Home() {
               Echipa care nu te poate dezamagii.
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-background/80 sm:text-base md:mt-6 md:text-lg">
-              Case, apartamente și spații comerciale — coordonate integral,
-              cu finisaje selectate și termene respectate.
+              Case, apartamente și spații comerciale — coordonate integral, cu finisaje selectate , termene respectate si meseriasi de calitate.
             </p>
             <ul className="mt-6 grid max-w-xl gap-2 text-sm text-background/85 sm:grid-cols-2">
               {[
