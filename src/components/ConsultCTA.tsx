@@ -26,7 +26,9 @@ export function ConsultCTA({
               to="/contact"
               className="rounded-full bg-gold px-6 py-3.5 text-center text-[11px] uppercase tracking-[0.22em] text-charcoal transition hover:bg-gold/90 sm:px-8 sm:py-4 sm:tracking-[0.28em]"
             >
-              Programează consultație
+              PROGRAMEAZĂ CONSULTAȚIE&nbsp;
+              <br />
+              GRATUITA
             </Link>
             <Link
               to="/portofoliu"
