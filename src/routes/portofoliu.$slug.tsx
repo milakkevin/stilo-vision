@@ -62,19 +62,8 @@ export const Route = createFileRoute("/portofoliu/$slug")({
   ),
 });
 
-// Custom masonry span pattern for variety
-const spans = [
-  "sm:col-span-2 sm:row-span-2",
-  "",
-  "",
-  "sm:col-span-2",
-  "",
-  "",
-  "sm:row-span-2",
-  "",
-  "sm:col-span-2",
-  "",
-];
+
+
 
 function Page() {
   const p = Route.useLoaderData() as Project;
