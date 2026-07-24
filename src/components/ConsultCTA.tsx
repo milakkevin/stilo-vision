@@ -28,7 +28,7 @@ export function ConsultCTA({
             >
               PROGRAMEAZĂ CONSULTAȚIE&nbsp;
               <br />
-              GRATUITA
+              <span className="text-white">GRATUITA</span>
             </Link>
             <Link
               to="/portofoliu"
