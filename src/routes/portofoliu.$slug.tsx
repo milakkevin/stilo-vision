@@ -178,13 +178,13 @@ function Page() {
           </div>
         </Reveal>
 
-        <div className="grid auto-rows-[180px] grid-cols-2 gap-3 sm:auto-rows-[220px] sm:grid-cols-4 sm:gap-4 md:auto-rows-[260px]">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {p.gallery.map((g, i) => (
             <button
               type="button"
               key={i}
               onClick={() => setLbIndex(i)}
-              className={`group relative overflow-hidden rounded-2xl bg-muted ${spans[i % spans.length]}`}
+              className="group relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-muted ring-1 ring-border/40 transition hover:ring-gold/40"
               aria-label={`Deschide imaginea ${i + 1}`}
             >
               <img
@@ -192,9 +192,11 @@ function Page() {
                 alt={p.galleryAlts?.[i] ?? `${p.title} — imagine ${i + 1}`}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.06]"
+                width={1920}
+                height={1080}
+                className="absolute inset-0 h-full w-full object-cover transition duration-[1200ms] ease-out group-hover:scale-[1.05]"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
               <div className="pointer-events-none absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-white opacity-0 backdrop-blur transition group-hover:opacity-100">
                 {String(i + 1).padStart(2, "0")} / {String(p.gallery.length).padStart(2, "0")}
               </div>
