@@ -239,11 +239,11 @@ export const PROJECTS: Project[] = [
     title: "Spațiu comercial",
     category: "Amenajare spațiu comercial",
     location: "Satu Mare",
-    cover: SPATIU_NOU[6].url,
+    cover: SPATIU_NOU[SPATIU_NOU.length - 1].url,
     gallery: SPATIU_NOU.map((img) => img.url),
     galleryAlts: SPATIU_NOU_ALTS,
     before: SPATIU_NOU[0].url,
-    after: SPATIU_NOU[6].url,
+    after: SPATIU_NOU[SPATIU_NOU.length - 1].url,
     badge: "Proiect finalizat",
     description:
       "Transformare completă a unui spațiu comercial, urmărind evoluția de la demolarea integrală a vechii amenajări, la ridicarea structurii din rigips, montajul pardoselii decorative și finisajele elegante cu ancadramente și arcade — până la rezultatul final, un salon modern cu iluminat ambiental, fotolii Chesterfield și atmosferă premium.",
