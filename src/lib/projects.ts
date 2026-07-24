@@ -32,7 +32,7 @@ import goia06 from "@/assets/goia/goia-06.jpg.asset.json";
 import goia07 from "@/assets/goia/goia-07.jpg.asset.json";
 import goia08 from "@/assets/goia/goia-08.jpg.asset.json";
 import goia09 from "@/assets/goia/goia-09.jpg.asset.json";
-import goia10 from "@/assets/goia/goia-10.jpg.asset.json";
+
 
 import ap01 from "@/assets/apartament/apartament-01.png.asset.json";
 import ap02 from "@/assets/apartament/apartament-02.png.asset.json";
@@ -140,7 +140,7 @@ const EXTERIOR_RENOVAT_ALTS = [
   "Mansardă spațioasă cu tavan înalt, ferestre noi și structură din lemn",
 ];
 
-const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09, goia10] as unknown as { url: string }[];
+const GOIA: { url: string }[] = [goia01, goia02, goia03, goia04, goia05, goia06, goia07, goia08, goia09] as unknown as { url: string }[];
 const APARTAMENT: { url: string }[] = [ap01, ap02, ap03, ap04, ap05, ap06, ap07] as unknown as { url: string }[];
 const APARTAMENT_ALTS = [
   "Living modern premium renovat de Stilo Renovation",
