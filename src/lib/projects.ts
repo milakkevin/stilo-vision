@@ -6,7 +6,7 @@ import p5 from "@/assets/project-5.jpg";
 import p6 from "@/assets/project-6.jpg";
 import before1 from "@/assets/before-1.jpg";
 
-import sp53 from "@/assets/spatiu-nou/sp-53.jpg.asset.json";
+import sp53 from "@/assets/spatiu-nou/spatiu-new-cover.png.asset.json";
 import sp54 from "@/assets/spatiu-nou/sp-54.jpg.asset.json";
 import sp55 from "@/assets/spatiu-nou/sp-55.jpg.asset.json";
 import sp56 from "@/assets/spatiu-nou/sp-56.jpg.asset.json";
